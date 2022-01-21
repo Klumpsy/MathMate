@@ -1,0 +1,30 @@
+@import "../../colors"; 
+
+.login-container { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    @include navBarColor; 
+    width: 400px; 
+    height: 350px; 
+    .login-container-inputs { 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 2rem; 
+        input { 
+            padding: 10px;
+        }
+    }
+    .login-container-buttons { 
+        display: flex;
+        flex-direction: column;
+        button { 
+            padding: 12px;
+            margin-top: 2px; 
+            &:hover { 
+                cursor: pointer;
+            }
+        }
+    }
+}

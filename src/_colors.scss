@@ -1,0 +1,8 @@
+@mixin navBarColor {
+    background: rgb(161,60,86);
+    background: linear-gradient(90deg, rgba(161,60,86,1) 0%, rgba(168,71,59,1) 74%);  
+} 
+
+@mixin backGroundColor { 
+    background-color: #68595d;
+}

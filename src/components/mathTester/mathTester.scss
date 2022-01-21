@@ -1,0 +1,17 @@
+@import "../../colors"; 
+@import "../../typography"; 
+
+.math-tester-container { 
+    @include mainTypography; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .math-tester-sum { 
+        font-size: 4rem;
+    }
+    .math-input-answer { 
+        padding: 15px
+    }
+}

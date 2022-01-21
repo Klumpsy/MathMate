@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
+.nav-bar-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100px;
+  border-radius: 0px 0px 20px 20px;
+  font-family: 'DM Sans', sans-serif;
+  background: #a13c56;
+  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
+  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+}
+
+.nav-bar-container .nav-bar-logo {
+  width: 100px;
+  margin-left: 10px;
+}
+
+.nav-bar-container .nav-bar-logo:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-bar-container .nav-bar-links {
+  color: black;
+}
+
+.nav-bar-container .nav-bar-links .nav-bar-trophy:hover {
+  color: #cbcea6;
+}
+
+.nav-bar-container .nav-profile-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-bar-container .nav-profile-container .nav-user-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20px;
+}
+
+.nav-bar-container .nav-profile-container .nav-user-container .nav-bar-profile-picture {
+  width: 70px;
+  border-radius: 50%;
+  border: 2px solid black;
+  margin-left: 15px;
+}
+
+.nav-bar-container .nav-profile-container .nav-user-container p {
+  font-size: 20px;
+}
+
+.nav-bar-container .nav-profile-container .nav-bar-settings-wheel {
+  margin-right: 20px;
+  color: black;
+}
+
+.nav-bar-container .nav-profile-container .settings-wheel:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: .7s ease-in-out;
+  transition: .7s ease-in-out;
+  cursor: pointer;
+}
+/*# sourceMappingURL=navbar.css.map */

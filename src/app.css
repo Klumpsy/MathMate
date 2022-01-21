@@ -1,0 +1,10 @@
+* { 
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+}
+
+.App { 
+    height: calc(100vh - 100px);
+    background-color: rgb(253, 253, 253); 
+}

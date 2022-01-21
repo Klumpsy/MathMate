@@ -1,0 +1,55 @@
+.login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #a13c56;
+  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
+  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+  width: 400px;
+  height: 350px;
+}
+
+.login-container .login-container-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+}
+
+.login-container .login-container-inputs input {
+  padding: 10px;
+}
+
+.login-container .login-container-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-container .login-container-buttons button {
+  padding: 12px;
+  margin-top: 2px;
+}
+
+.login-container .login-container-buttons button:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=loginScreen.css.map */

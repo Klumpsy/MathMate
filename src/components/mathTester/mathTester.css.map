@@ -1,0 +1,11 @@
+{
+    "version": 3,
+    "mappings": "AEAA,OAAO,CAAC,2EAAI;AFGZ,AAAA,sBAAsB,CAAC;EEAnB,WAAW,EAAE,qBAAqB;EFElC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;CAOtB;;AAbD,AAOI,sBAPkB,CAOlB,gBAAgB,CAAC;EACb,SAAS,EAAE,IAAI;CAClB;;AATL,AAUI,sBAVkB,CAUlB,kBAAkB,CAAC;EACf,OAAO,EAAE,IACb;CAAC",
+    "sources": [
+        "mathTester.scss",
+        "../../_colors.scss",
+        "../../_typography.scss"
+    ],
+    "names": [],
+    "file": "mathTester.css"
+}
