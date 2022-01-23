@@ -1,12 +1,19 @@
 @import "../../colors"; 
+@import "../../typography"; 
 
 .login-container { 
+    @include mainTypography; 
     display: flex; 
     flex-direction: column; 
     justify-content: space-between; 
-    @include navBarColor; 
-    width: 400px; 
-    height: 350px; 
+    align-items: center;
+    width: 350px; 
+    height: 500px; 
+    border: 2px solid white;
+    border-radius: 20px;
+    background: rgb(176,137,159);
+    background: linear-gradient(128deg, rgb(240, 240, 243) 0%, rgba(183,194,196,1) 100%); 
+    box-shadow: rgba(7, 7, 7, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     .login-container-inputs { 
         display: flex;
         flex-direction: column; 
@@ -16,14 +23,33 @@
             padding: 10px;
         }
     }
-    .login-container-buttons { 
+    .login-container-logo { 
+        width: 150px;
+    }
+    .login-container-text{ 
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        p { 
+            font-size: 16px;
+        }
+    }
+    .login-container-buttons { 
+        display: flex; 
+        width: 100%; 
         button { 
-            padding: 12px;
-            margin-top: 2px; 
+            width: 100%; 
+            padding: 20px;
+            border-radius: 0px 0px 20px 20px;
+            outline: none;
+            border: none;
+            border-top: 1px solid black;
+            font-size: 20px;
             &:hover { 
                 cursor: pointer;
+                @include navBarColor; 
+                color: white;
             }
         }
     }

@@ -1,23 +1,26 @@
 import React from 'react';
-import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import { correctAnswer, wrongAnswer } from "../../actions"
 import "./mathTester.css";
+
+//Redux
+import { useSelector, useDispatch } from "react-redux";
+import { setRightAnswer, setWrongAnswer, setResetScore, checkScore } from "../../reducers/sumCheckerSlice";
+import { setGameModeTen, setGameModeHundred, setGameModeThousand, currentGameMode } from "../../reducers/gameModeSlice";
 
 const MathTester = () => {
 
   //Redux functions
-  const counter = useSelector(state => state.sumCheckReducer);
-  const logged = useSelector(state => state.isLoggedReduder);
+  const score = useSelector(checkScore);
+  const gameMode = useSelector(currentGameMode);
   const dispatch = useDispatch();
 
   //sum state
   const [sum, setSum] = useState({});
 
   //function for creating sum
-  const createSum = () => {
-    const randomNumberOne = Math.floor(Math.random() * 10);
-    const randomNumberTwo = Math.floor(Math.random() * 10);
+  const createSum = (number1 = 10, number2 = 10) => {
+    const randomNumberOne = Math.floor(Math.random() * number1);
+    const randomNumberTwo = Math.floor(Math.random() * number2);
     const answer = randomNumberOne + randomNumberTwo;
 
     const sumObject = {
@@ -36,22 +39,37 @@ const MathTester = () => {
       alert("You forgot to give an answer!")
     }
     else if (event.target[0].value == sum.answer) {
-      dispatch(correctAnswer())
+      dispatch(setRightAnswer())
       event.target[0].value = "";
     }
     else if (event.target[0].value != "" && event.target.value != sum.answer) {
-      dispatch(wrongAnswer())
+      dispatch(setWrongAnswer())
       event.target[0].value = "";
     }
   }
 
   useEffect(() => {
-    createSum();
-  }, [counter])
+    if (gameMode.gameMode === "ten") {
+      createSum(10, 10);
+    } else if (gameMode.gameMode === "hundred") {
+      createSum(100, 100)
+    } else if (gameMode.gameMode === "thousand") {
+      createSum(1000, 1000)
+    }
+  }, [gameMode, score])
 
   return (
     <div className="math-tester-container">
-      <h1>Counter: {counter}</h1>
+      <div className="math-tester-games-button">
+        <div className="math-tester-games-button-container">
+          <p>Games</p>
+          <button onClick={() => dispatch(setGameModeTen())}>10</button>
+          <button onClick={() => dispatch(setGameModeHundred())}>100</button>
+          <button onClick={() => dispatch(setGameModeThousand())}>1000</button>
+        </div>
+      </div>
+      <h2>Current GameMode: {gameMode.gameMode}</h2>
+      <h1>Counter: {score.score}</h1>
       <div>
         <span className="math-tester-sum">{`${sum.number1} + ${sum.number2} =`}</span>
       </div>

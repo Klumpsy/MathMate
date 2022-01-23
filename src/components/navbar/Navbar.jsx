@@ -14,7 +14,15 @@ import testProfilePicture from "../../images/profile.jpg";
 //logo
 import mathMateLogo from "../../images/MathMateLogo.png";
 
-const Navbar = () => {
+//Redux
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserEmail, selectUserName } from "../../reducers/userSlice";
+
+const Navbar = ({ handleSignOut }) => {
+    const dispatch = useDispatch();
+    const userName = useSelector(selectUserName);
+    const userEmail = useSelector(selectUserEmail);
+
     return (
         <div className="nav-bar-container">
             <div>
@@ -24,8 +32,9 @@ const Navbar = () => {
                 <BsTrophy className="nav-bar-trophy" size={30} />
             </div>
             <div className="nav-profile-container">
+                {userName ? <button onClick={handleSignOut}>Logout</button> : ""}
                 <div className="nav-user-container">
-                    <p>Bart Klumpers</p>
+                    <p>{userName}</p>
                     <img className="nav-bar-profile-picture " src={testProfilePicture} />
                 </div>
                 <div className="nav-bar-settings-wheel">

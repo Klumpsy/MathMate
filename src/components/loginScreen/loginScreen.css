@@ -1,4 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
 .login-container {
+  font-family: 'DM Sans', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,11 +11,17 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background: #a13c56;
-  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
-  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
-  width: 400px;
-  height: 350px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 350px;
+  height: 500px;
+  border: 2px solid white;
+  border-radius: 20px;
+  background: #b0899f;
+  background: linear-gradient(128deg, #f0f0f3 0%, #b7c2c4 100%);
+  -webkit-box-shadow: rgba(7, 7, 7, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+          box-shadow: rgba(7, 7, 7, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .login-container .login-container-inputs {
@@ -34,7 +42,11 @@
   padding: 10px;
 }
 
-.login-container .login-container-buttons {
+.login-container .login-container-logo {
+  width: 150px;
+}
+
+.login-container .login-container-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,14 +54,40 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-container .login-container-text p {
+  font-size: 16px;
+}
+
+.login-container .login-container-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
 }
 
 .login-container .login-container-buttons button {
-  padding: 12px;
-  margin-top: 2px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 0px 0px 20px 20px;
+  outline: none;
+  border: none;
+  border-top: 1px solid black;
+  font-size: 20px;
 }
 
 .login-container .login-container-buttons button:hover {
   cursor: pointer;
+  background: #a13c56;
+  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
+  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+  color: white;
 }
 /*# sourceMappingURL=loginScreen.css.map */

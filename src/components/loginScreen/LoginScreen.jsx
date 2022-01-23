@@ -1,16 +1,20 @@
 import React from 'react';
 import "./loginScreen.css";
 
-function LoginScreen() {
+import mathMateLogo from "../../images/MathMateLogo.png";
+
+function LoginScreen({ handleSignIn }) {
+
     return (
         <div className="login-container">
-            <div className="login-container-inputs">
-                <input placeholder="login"></input>
-                <input placeholder="password" type="password"></input>
+            <img className="login-container-logo" src={mathMateLogo} />
+            <div className="login-container-text">
+                <p>Welkom bij</p>
+                <h1>MathMate</h1>
+                <p>De tool om jouw rekenskills te verbeteren!</p>
             </div>
             <div className="login-container-buttons">
-                <button>Login</button>
-                <button>Sign Up</button>
+                <button onClick={handleSignIn}>Login</button>
             </div>
         </div>
     )

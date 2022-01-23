@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
 .math-tester-container {
   font-family: 'DM Sans', sans-serif;
+  position: relative;
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -21,5 +22,61 @@
 
 .math-tester-container .math-input-answer {
   padding: 15px;
+}
+
+.math-tester-container .math-tester-games-button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  overflow: hidden;
+  background: #a13c56;
+  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
+  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+  color: white;
+  font-size: 20px;
+  border: 2px solid black;
+}
+
+.math-tester-container .math-tester-games-button .math-tester-games-button-container {
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+}
+
+.math-tester-container .math-tester-games-button .math-tester-games-button-container button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: #221c1d;
+}
+
+.math-tester-container .math-tester-games-button .math-tester-games-button-container button:hover {
+  cursor: pointer;
+  background-color: #352f2f;
+}
+
+.math-tester-container .math-tester-games-button:hover {
+  background: #b95c73;
+  background: -webkit-gradient(linear, left top, right top, from(#b16276), color-stop(74%, #b37169));
+  background: linear-gradient(90deg, #b16276 0%, #b37169 74%);
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  height: 400px;
 }
 /*# sourceMappingURL=mathTester.css.map */

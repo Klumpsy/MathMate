@@ -3,6 +3,7 @@
 
 .math-tester-container { 
     @include mainTypography; 
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -13,5 +14,42 @@
     }
     .math-input-answer { 
         padding: 15px
+    }
+    .math-tester-games-button { 
+        position: absolute; 
+        left: 10px; 
+        top: 10px; 
+        width: 80px;
+        height: 80px; 
+        border-radius: 40px; 
+        overflow: hidden; 
+        @include navBarColor; 
+        color: white; 
+        font-size: 20px;
+        border: 2px solid black;
+        .math-tester-games-button-container { 
+            height: 300px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            button { 
+                width: 100%; 
+                padding: 10px;
+                color: white; 
+                background-color: rgb(34, 28, 29);
+                &:hover { 
+                    cursor: pointer;
+                    background-color: rgb(53, 47, 47); 
+                }
+            }
+        }
+        &:hover { 
+            @include navBarColorHover; 
+            cursor: pointer;
+            transition: .3s ease-in-out; 
+            height: 400px;
+        }
     }
 }
