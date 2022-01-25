@@ -22,8 +22,10 @@
     .nav-bar-links { 
         color: rgb(0, 0, 0);
         .nav-bar-trophy { 
+            text-decoration: none;
+            color: black;
             &:hover { 
-                color: rgb(203, 206, 166);
+                color: rgb(214, 221, 140);
             }
         }
     }

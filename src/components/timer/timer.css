@@ -1,0 +1,40 @@
+.timer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timer-container span {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.timer-container button {
+  background: #a13c56;
+  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
+  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+  color: white;
+  font-size: 18px;
+  padding: 10px 40px;
+}
+
+.timer-container button:hover {
+  cursor: pointer;
+  background: #b95c73;
+  background: -webkit-gradient(linear, left top, right top, from(#b16276), color-stop(74%, #b37169));
+  background: linear-gradient(90deg, #b16276 0%, #b37169 74%);
+}
+
+.timer-container button:disabled {
+  display: none;
+  -webkit-transition: 1s ease-in;
+  transition: 1s ease-in;
+}
+/*# sourceMappingURL=timer.css.map */

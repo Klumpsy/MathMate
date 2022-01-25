@@ -1,5 +1,7 @@
 import React from 'react';
 import "./navbar.css";
+//Components
+import Statspage from '../statsPage/Statspage';
 
 //React Icons
 import { FiSettings } from "react-icons/fi";
@@ -26,10 +28,14 @@ const Navbar = ({ handleSignOut }) => {
     return (
         <div className="nav-bar-container">
             <div>
-                <img className="nav-bar-logo" src={mathMateLogo} />
+                <Link to="/">
+                    <img className="nav-bar-logo" src={mathMateLogo} />
+                </Link>
             </div>
             <div className="nav-bar-links">
-                <BsTrophy className="nav-bar-trophy" size={30} />
+                <Link to="/stats">
+                    <BsTrophy className="nav-bar-trophy" size={30} />
+                </Link>
             </div>
             <div className="nav-profile-container">
                 {userName ? <button onClick={handleSignOut}>Logout</button> : ""}

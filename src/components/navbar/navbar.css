@@ -35,8 +35,13 @@
   color: black;
 }
 
+.nav-bar-container .nav-bar-links .nav-bar-trophy {
+  text-decoration: none;
+  color: black;
+}
+
 .nav-bar-container .nav-bar-links .nav-bar-trophy:hover {
-  color: #cbcea6;
+  color: #d6dd8c;
 }
 
 .nav-bar-container .nav-profile-container {

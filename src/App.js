@@ -1,5 +1,10 @@
 //Routing
-import { BrowserRouter as Router, Route } from "react-router-dom"; 
+import {
+  BrowserRouter,
+  Routes,
+  Route, 
+  useNavigate
+} from "react-router-dom";
 
 //Firebase
 import {auth, provider} from "./firebase"; 
@@ -12,6 +17,7 @@ import { setActiveUser, setLogoutUser, selectUserEmail, selectUserName } from ".
 import MathTester from "./components/mathTester/MathTester";
 import Navbar from "./components/navbar/Navbar"; 
 import LoginScreen from "./components/loginScreen/LoginScreen"; 
+import Statspage from "./components/statsPage/Statspage";
 
 //styling
 import "./app.css"
@@ -20,6 +26,8 @@ function App() {
   const dispatch = useDispatch(); 
   const userName = useSelector(selectUserName); 
   const userEmail = useSelector(selectUserEmail); 
+
+  const navigate = useNavigate()
 
   const handleSignIn = () => { 
     auth.signInWithPopup(provider).then(result => { 
@@ -37,19 +45,19 @@ function App() {
   }
   
   return (
-    <Router>
-      {
-        !userName ? 
-      <div className = "login-screen-container">
-          <LoginScreen handleSignIn = {handleSignIn}/> 
+      <div>
+        {userName && <Navbar handleSignOut = {handleSignOut}/>}
+        {userName ? 
+        <Routes>
+          <Route path="/" element = { <MathTester/>}/>
+          <Route path="/stats" element ={<Statspage/>}/>
+        </Routes>
+        :
+        <div className = "login-screen-container">
+          <LoginScreen handleSignIn = {handleSignIn}/>
+        </div>
+        }
       </div>
-      :
-       <div className="App">
-          <Navbar handleSignOut = {handleSignOut}/>
-          <MathTester/>
-       </div>
-      }
-    </Router>
   );
 }
 

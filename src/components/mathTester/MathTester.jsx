@@ -2,16 +2,26 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import "./mathTester.css";
 
+//Components
+import Timer from "../timer/Timer"
+
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 import { setRightAnswer, setWrongAnswer, setResetScore, checkScore } from "../../reducers/sumCheckerSlice";
 import { setGameModeTen, setGameModeHundred, setGameModeThousand, currentGameMode } from "../../reducers/gameModeSlice";
+import { selectUserName } from "../../reducers/userSlice";
+import { gameStatus, timerStatus } from "../../reducers/timerSlice";
+
+//Firebase Functions
+import { addScore } from '../../firebaseFunctions/addScore';
 
 const MathTester = () => {
 
   //Redux functions
   const score = useSelector(checkScore);
+  const userName = useSelector(selectUserName)
   const gameMode = useSelector(currentGameMode);
+  const gameLength = useSelector(gameStatus)
   const dispatch = useDispatch();
 
   //sum state
@@ -58,6 +68,13 @@ const MathTester = () => {
     }
   }, [gameMode, score])
 
+  useEffect(() => {
+    if (gameLength === "done") {
+      addScore(userName, score.score)
+      dispatch(setResetScore())
+    }
+  }, [gameLength])
+
   return (
     <div className="math-tester-container">
       <div className="math-tester-games-button">
@@ -68,15 +85,24 @@ const MathTester = () => {
           <button onClick={() => dispatch(setGameModeThousand())}>1000</button>
         </div>
       </div>
-      <h2>Current GameMode: {gameMode.gameMode}</h2>
-      <h1>Counter: {score.score}</h1>
-      <div>
-        <span className="math-tester-sum">{`${sum.number1} + ${sum.number2} =`}</span>
+      <div className="current-game-mode">
+        <h2>Current GameMode: {gameMode.gameMode}</h2>
       </div>
-      <form onSubmit={handleSubmit}>
-        <input className="math-input-answer" placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
-        <button type="submit"></button>
-      </form>
+      <div className="current-game-score">
+        <h1>Score: {score.score}</h1>
+      </div>
+      <div className="current-game-sum">
+        <div>
+          <Timer />
+        </div>
+        <div>
+          <span className="math-tester-sum">{`${sum.number1} + ${sum.number2} =`}</span>
+          <form onSubmit={handleSubmit}>
+            <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
+            <button type="submit"></button>
+          </form>
+        </div>
+      </div>
     </div>
   )
 };
