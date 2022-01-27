@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
-.App { 
+.application-container { 
     height: calc(100vh - 100px);
-    background: linear-gradient(128deg, rgb(240, 240, 243) 0%, rgba(183,194,196,1) 100%); 
+    background: rgb(144, 168, 168);
+    background: radial-gradient(circle, rgb(228, 201, 206) 0%, rgb(241, 228, 233) 88%, rgb(126, 33, 64) 100%); 
 }
 
 .login-screen-container { 

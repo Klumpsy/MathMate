@@ -4,8 +4,9 @@ import "./navbar.css";
 import Statspage from '../statsPage/Statspage';
 
 //React Icons
-import { FiSettings } from "react-icons/fi";
+import { FiLogOut } from "react-icons/fi";
 import { BsTrophy } from "react-icons/bs";
+import { CgGames } from "react-icons/cg";
 
 //Router
 import { Link } from 'react-router-dom';
@@ -33,18 +34,20 @@ const Navbar = ({ handleSignOut }) => {
                 </Link>
             </div>
             <div className="nav-bar-links">
+                <Link to="/">
+                    <CgGames className="nav-bar-controller" size={35} />
+                </Link>
                 <Link to="/stats">
-                    <BsTrophy className="nav-bar-trophy" size={30} />
+                    <BsTrophy className="nav-bar-trophy" size={35} />
                 </Link>
             </div>
             <div className="nav-profile-container">
-                {userName ? <button onClick={handleSignOut}>Logout</button> : ""}
                 <div className="nav-user-container">
                     <p>{userName}</p>
                     <img className="nav-bar-profile-picture " src={testProfilePicture} />
                 </div>
-                <div className="nav-bar-settings-wheel">
-                    <FiSettings className="settings-wheel" size={25} />
+                <div className="nav-bar-logout">
+                    <FiLogOut className="logout" size={30} onClick={handleSignOut} />
                 </div>
             </div>
         </div>

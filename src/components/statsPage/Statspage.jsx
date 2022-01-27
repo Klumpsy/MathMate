@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
+import "./statspage.css"
+
 //Firebase
-import { getUserStats, getAllScores } from '../../firebaseFunctions/addScore'
+import { getAllScoresSumTen, getAllScoresSumHundred, getAllScoresSumThousand } from '../../firebaseFunctions/addScore'
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
@@ -11,26 +13,57 @@ const Statspage = () => {
     const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
 
-    const [userData, setUserData] = useState();
+    const [userDataTen, setUserDataTen] = useState();
+    const [userDataHundred, setUserDataHundred] = useState();
+    const [userDataThousand, setUserDataThousand] = useState();
 
     useEffect(() => {
         const getUsers = async () => {
-            const data = await getAllScores();
-            setUserData(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+            const dataTen = await getAllScoresSumTen();
+            setUserDataTen(dataTen.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+            const dataHundred = await getAllScoresSumHundred();
+            setUserDataHundred(dataHundred.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+            const dataThousand = await getAllScoresSumThousand();
+            setUserDataThousand(dataThousand.docs.map(doc => ({ ...doc.data(), id: doc.id })))
         }
         getUsers()
     }, [])
 
     return (
-        <div>
-            {
-                userData?.map(user => (
-                    <div key={user.id}>
-                        <h1>{user.name}</h1>
-                        <h2>{user.score}</h2>
-                    </div>
-                ))
-            }
+        <div className="high-score-list">
+            <div className="high-score-game-mode-ten">
+                <h2>Highscore sum 10</h2>
+                {
+                    userDataTen?.map(user => (
+                        <div key={user.id} className="high-score-item">
+                            <h3>{user.name}</h3>
+                            <p>{user.score}</p>
+                        </div>
+                    ))
+                }
+            </div>
+            <div className="high-score-game-mode-hundred">
+                <h2>Highscore sum 100</h2>
+                {
+                    userDataHundred?.map(user => (
+                        <div key={user.id} className="high-score-item">
+                            <h3>{user.name}</h3>
+                            <p>{user.score}</p>
+                        </div>
+                    ))
+                }
+            </div>
+            <div className="high-score-game-mode-thousand">
+                <h2>Highscore sum 1000</h2>
+                {
+                    userDataThousand?.map(user => (
+                        <div key={user.id} className="high-score-item">
+                            <h3>{user.name}</h3>
+                            <p>{user.score}</p>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     )
 }

@@ -1,0 +1,33 @@
+@import "../../colors";
+@import "../../typography"; 
+
+.high-score-list { 
+    @include mainTypography; 
+    width: 100%; 
+    height: calc(100vh - 100px); 
+    display: flex; 
+    flex-wrap: wrap;
+    padding: 20px; 
+    h2 { 
+        color: white; 
+        margin-bottom: 20px; 
+    }
+    .high-score-item { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        border-bottom: 1px solid black;
+    }
+    .high-score-game-mode-ten { 
+        @include highScoreModeTen;
+        @include highScoreList; 
+    }
+    .high-score-game-mode-hundred {
+        @include highScoreList; 
+        @include highScoreModeHundred;
+    }
+    .high-score-game-mode-thousand{
+        @include highScoreList; 
+        @include highScoreModeThousand; 
+    }
+}

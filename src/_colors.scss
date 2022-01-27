@@ -11,3 +11,26 @@
 @mixin backGroundColor { 
     background-color: #68595d;
 }
+
+@mixin highScoreList { 
+    padding: 10px; 
+    border-radius: 16px;
+    max-height: 350px; 
+    width: 300px; 
+    margin: 20px; 
+}
+
+@mixin highScoreModeTen { 
+    background: rgb(97, 145, 151);
+    background: linear-gradient(90deg, rgb(103, 167, 156) 0%, rgb(175, 154, 98)74%); 
+}
+
+@mixin highScoreModeHundred { 
+    background: rgb(168, 81, 103);
+    background: linear-gradient(90deg, rgb(167, 121, 132) 0%, rgb(206, 103, 94)74%); 
+}
+
+@mixin highScoreModeThousand{ 
+    background: rgb(106, 135, 180);
+    background: linear-gradient(90deg, rgb(104, 75, 107) 0%, rgb(119, 113, 172)74%); 
+}

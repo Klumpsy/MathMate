@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
+.high-score-list {
+  font-family: 'DM Sans', sans-serif;
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px;
+}
+
+.high-score-list h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.high-score-list .high-score-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.high-score-list .high-score-game-mode-ten {
+  background: #619197;
+  background: -webkit-gradient(linear, left top, right top, from(#67a79c), color-stop(74%, #af9a62));
+  background: linear-gradient(90deg, #67a79c 0%, #af9a62 74%);
+  padding: 10px;
+  border-radius: 16px;
+  max-height: 350px;
+  width: 300px;
+  margin: 20px;
+}
+
+.high-score-list .high-score-game-mode-hundred {
+  padding: 10px;
+  border-radius: 16px;
+  max-height: 350px;
+  width: 300px;
+  margin: 20px;
+  background: #a85167;
+  background: -webkit-gradient(linear, left top, right top, from(#a77984), color-stop(74%, #ce675e));
+  background: linear-gradient(90deg, #a77984 0%, #ce675e 74%);
+}
+
+.high-score-list .high-score-game-mode-thousand {
+  padding: 10px;
+  border-radius: 16px;
+  max-height: 350px;
+  width: 300px;
+  margin: 20px;
+  background: #6a87b4;
+  background: -webkit-gradient(linear, left top, right top, from(#684b6b), color-stop(74%, #7771ac));
+  background: linear-gradient(90deg, #684b6b 0%, #7771ac 74%);
+}
+/*# sourceMappingURL=statspage.css.map */

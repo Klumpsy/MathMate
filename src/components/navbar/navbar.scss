@@ -22,10 +22,18 @@
     .nav-bar-links { 
         color: rgb(0, 0, 0);
         .nav-bar-trophy { 
+            margin-left: 25px; 
             text-decoration: none;
             color: black;
             &:hover { 
-                color: rgb(214, 221, 140);
+                color: rgb(236, 202, 121);
+            }
+        }
+        .nav-bar-controller { 
+            text-decoration: none;
+            color: black; 
+            &:hover { 
+                color: rgb(152, 191, 228); 
             }
         }
     }
@@ -48,14 +56,15 @@
                 font-size: 20px;
             }
         }
-        .nav-bar-settings-wheel { 
+        .nav-bar-logout { 
             margin-right: 20px;
             color: rgb(0, 0, 0); 
             }
-            .settings-wheel { 
+            .logout { 
                 &:hover { 
-                    transform: rotate(360deg); 
-                    transition: .7s ease-in-out;
+                    transform: translateX(5px); 
+                    transition: .3s ease-in-out;
+                    color: white;
                     cursor: pointer;
             }
         }

@@ -45,7 +45,7 @@ function App() {
   }
   
   return (
-      <div>
+      <div className = "application-container">
         {userName && <Navbar handleSignOut = {handleSignOut}/>}
         {userName ? 
         <Routes>

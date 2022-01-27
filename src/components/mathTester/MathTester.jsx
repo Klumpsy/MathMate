@@ -13,7 +13,7 @@ import { selectUserName } from "../../reducers/userSlice";
 import { gameStatus, timerStatus } from "../../reducers/timerSlice";
 
 //Firebase Functions
-import { addScore } from '../../firebaseFunctions/addScore';
+import { addScoreTen, addScoreHundred, addScoreThousand } from '../../firebaseFunctions/addScore';
 
 const MathTester = () => {
 
@@ -53,8 +53,15 @@ const MathTester = () => {
       event.target[0].value = "";
     }
     else if (event.target[0].value != "" && event.target.value != sum.answer) {
-      dispatch(setWrongAnswer())
-      event.target[0].value = "";
+      if (score.score == 0) {
+        event.target[0].value = "";
+      } else {
+        dispatch(setWrongAnswer())
+        event.target[0].value = "";
+      }
+    }
+    else {
+      return
     }
   }
 
@@ -70,7 +77,16 @@ const MathTester = () => {
 
   useEffect(() => {
     if (gameLength === "done") {
-      addScore(userName, score.score)
+      switch (gameMode.gameMode) {
+        case "ten": addScoreTen(userName, score.score)
+          break
+        case "hundred": addScoreHundred(userName, score.score)
+          break
+        case "thousand": addScoreThousand(userName, score.score)
+          break
+        default: return
+      }
+
       dispatch(setResetScore())
     }
   }, [gameLength])
@@ -91,17 +107,15 @@ const MathTester = () => {
       <div className="current-game-score">
         <h1>Score: {score.score}</h1>
       </div>
+      <div className="timer">
+        <Timer />
+      </div>
       <div className="current-game-sum">
-        <div>
-          <Timer />
-        </div>
-        <div>
-          <span className="math-tester-sum">{`${sum.number1} + ${sum.number2} =`}</span>
-          <form onSubmit={handleSubmit}>
-            <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
-            <button type="submit"></button>
-          </form>
-        </div>
+        <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+        <form onSubmit={handleSubmit} className="form">
+          <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
+          <button type="submit" className="submit-button">submit</button>
+        </form>
       </div>
     </div>
   )

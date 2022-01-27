@@ -9,23 +9,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    .math-tester-sum { 
-        font-size: 4rem;
-    }
-    .math-input-answer { 
-        padding: 15px
-    }
+   
     .current-game-mode { 
         position: absolute; 
         left: 100px;
         top: 30px;
     }
+    .timer { 
+        margin: 2rem;
+        margin-top: 4rem;
+    }
     .current-game-sum { 
-        height: 300px; 
+        margin-top: 5rem;  
+        height: 200px; 
+        width: 650px; 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+        .math-tester-sum { 
+            font-size: 7rem; 
+        }
+        .math-input-answer { 
+            padding: 15px; 
+        }
+        .form { 
+            display: flex;
+            flex-direction: column;
+            .submit-button { 
+                padding: 10px;
+                margin-top: 3px;
+                background-color: rgb(169, 238, 169);
+                font-size: 18px;
+                border: none;
+                color: rgb(36, 53, 36);
+                &:hover {
+                    background-color: rgb(115, 179, 115);
+                    cursor: pointer;
+                }
+            }
+        }
     }
     .current-game-score { 
         position: absolute; 

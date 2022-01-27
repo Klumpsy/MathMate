@@ -36,12 +36,22 @@
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-trophy {
+  margin-left: 25px;
   text-decoration: none;
   color: black;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-trophy:hover {
-  color: #d6dd8c;
+  color: #ecca79;
+}
+
+.nav-bar-container .nav-bar-links .nav-bar-controller {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar-container .nav-bar-links .nav-bar-controller:hover {
+  color: #98bfe4;
 }
 
 .nav-bar-container .nav-profile-container {
@@ -80,16 +90,17 @@
   font-size: 20px;
 }
 
-.nav-bar-container .nav-profile-container .nav-bar-settings-wheel {
+.nav-bar-container .nav-profile-container .nav-bar-logout {
   margin-right: 20px;
   color: black;
 }
 
-.nav-bar-container .nav-profile-container .settings-wheel:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  -webkit-transition: .7s ease-in-out;
-  transition: .7s ease-in-out;
+.nav-bar-container .nav-profile-container .logout:hover {
+  -webkit-transform: translateX(5px);
+          transform: translateX(5px);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  color: white;
   cursor: pointer;
 }
 /*# sourceMappingURL=navbar.css.map */

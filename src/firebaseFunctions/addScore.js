@@ -1,26 +1,65 @@
 import firebase from 'firebase/compat/app';
 
 import {database} from "../firebase"; 
-import {collection, getDocs, addDoc} from "firebase/firestore"; 
+import {collection, getDocs, updateDoc, doc, setDoc, getDoc} from "firebase/firestore"; 
 
 //CRUD functions
-const userCollectionRef = collection(database, "userScore")
+const userCollectionRefModeTen = collection(database, "sumTen"); 
+const userCollectionRefModeHundred = collection(database, "sumHundred"); 
+const userCollectionRefModeThousand = collection(database, "sumThousand"); 
+
 //Create
-export const addScore = async (name, score) => { 
-    await addDoc(userCollectionRef, {name, score})
+export const addScoreTen = async (name, score) => { 
+    const docRef = doc(database, "sumTen", name);
+    const docSnap = await getDoc(docRef)
+    if(docSnap.exists()) {
+        if(docSnap.data().score < score) {
+            await updateDoc(docRef, {name, score}) 
+        } else { 
+            return
+        }
+    } else { 
+        await setDoc(doc(database, "sumTen", name), {name, score})
+    }
+}
+
+export const addScoreHundred = async(name, score) => { 
+    const docRef = doc(database, "sumHundred", name);
+    const docSnap = await getDoc(docRef)
+    if(docSnap.exists()) {
+        if(docSnap.data().score < score) {
+            await updateDoc(docRef, {name, score}) 
+        } else { 
+            return
+        }
+    } else { 
+        await setDoc(doc(database, "sumHundred", name), {name, score})
+    }
+}
+export const addScoreThousand = async(name, score) => { 
+    const docRef = doc(database, "sumThousand", name);
+    const docSnap = await getDoc(docRef)
+    if(docSnap.exists()) {
+        if(docSnap.data().score < score) {
+            await updateDoc(docRef, {name, score}) 
+        } else { 
+            return
+        }
+    } else { 
+        await setDoc(doc(database, "sumThousand", name), {name, score})
+    }
 }
 
 //Read
-export const getUserStats = async (name) => { 
-    const data = await getDocs(userCollectionRef, name)
+export const getAllScoresSumTen = async () => { 
+    const data = await getDocs(userCollectionRefModeTen)
     return data 
 }
-
-export const getAllScores = async () => { 
-    const data = await getDocs(userCollectionRef)
+export const getAllScoresSumHundred = async () => { 
+    const data = await getDocs(userCollectionRefModeHundred)
     return data 
 }
-
-//Update
-
-//Delete 
+export const getAllScoresSumThousand = async () => { 
+    const data = await getDocs(userCollectionRefModeThousand)
+    return data 
+}

@@ -4,11 +4,13 @@ import "./timer.css"
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 import { setStart, setStop, timerStatus, setGameStatusActive, setGameStatusNone, setGameStatusDone } from "../../reducers/timerSlice";
+import { currentGameMode } from "../../reducers/gameModeSlice";
 
 const Timer = () => {
 
     //Redux functions
     const timer = useSelector(timerStatus);
+    const gameMode = useSelector(currentGameMode);
     const dispatch = useDispatch();
 
     const [time, setTime] = useState(30)
@@ -27,9 +29,23 @@ const Timer = () => {
         }
     }
     const resetSeconds = () => {
-        setTime(30)
+        checkGameModeForTime()
         dispatch(setGameStatusNone())
     }
+
+    const checkGameModeForTime = () => {
+        if (gameMode.gameMode === "ten") {
+            setTime(30)
+        } else if (gameMode.gameMode === "hundred") {
+            setTime(60)
+        } else if (gameMode.gameMode === "thousand") {
+            setTime(120)
+        }
+    }
+
+    useEffect(() => {
+        checkGameModeForTime()
+    }, [gameMode])
 
     useEffect(() => {
         if (hasTimerEnded) {
