@@ -6,17 +6,19 @@
     align-items: center;
     span { 
         font-size: 2rem;
-        color: rgb(173, 91, 91); 
+        color: rgb(15, 14, 14); 
         font-weight: 600;
     }
     button { 
-        @include navBarColor; 
-        color: white; 
+        background-color: rgb(141, 224, 141);
+        color: rgb(8, 8, 8); 
+        font-weight: 700; 
         font-size: 18px;
         padding: 10px 40px;
+        border: 2px solid black;
         &:hover { 
             cursor: pointer;   
-            @include navBarColorHover; 
+            background-color: rgb(192, 236, 192);
         }
         &:disabled { 
             display: none;

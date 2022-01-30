@@ -12,10 +12,11 @@
   width: 100%;
   height: 100px;
   border-radius: 0px 0px 20px 20px;
+  border-bottom: 2px solid #13141a;
   font-family: 'DM Sans', sans-serif;
-  background: #a13c56;
-  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
-  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+  background: #4897c5;
+  background: -webkit-gradient(linear, left top, right top, from(#7298df), color-stop(74%, #94d3df));
+  background: linear-gradient(90deg, #7298df 0%, #94d3df 74%);
 }
 
 .nav-bar-container .nav-bar-logo {
@@ -33,10 +34,15 @@
 
 .nav-bar-container .nav-bar-links {
   color: black;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-trophy {
-  margin-left: 25px;
   text-decoration: none;
   color: black;
 }
@@ -51,7 +57,16 @@
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-controller:hover {
-  color: #98bfe4;
+  color: #e5e6d9;
+}
+
+.nav-bar-container .nav-bar-links .nav-bar-personal-dashboard {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar-container .nav-bar-links .nav-bar-personal-dashboard:hover {
+  color: #2c5724;
 }
 
 .nav-bar-container .nav-profile-container {

@@ -1,11 +1,11 @@
 @mixin navBarColor {
-    background: rgb(161,60,86);
-    background: linear-gradient(90deg, rgba(161,60,86,1) 0%, rgba(168,71,59,1) 74%);  
+    background: rgb(72, 151, 197);
+    background: linear-gradient(90deg, rgb(114, 152, 223) 0%, rgb(148, 211, 223) 74%);    
 } 
 
 @mixin navBarColorHover {
-    background: rgb(185, 92, 115);
-    background: linear-gradient(90deg, rgb(177, 98, 118) 0%, rgb(179, 113, 105) 74%);  
+    background: rgb(72, 151, 197);
+    background: linear-gradient(90deg, rgb(114, 152, 223) 0%, rgb(148, 211, 223) 74%);  
 } 
 
 @mixin backGroundColor { 

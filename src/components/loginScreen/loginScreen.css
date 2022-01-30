@@ -18,7 +18,7 @@
   height: 500px;
   border: 2px solid white;
   border-radius: 20px;
-  background: #b0899f;
+  background: #97abad;
   background: linear-gradient(128deg, #f0f0f3 0%, #b7c2c4 100%);
   -webkit-box-shadow: rgba(7, 7, 7, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
           box-shadow: rgba(7, 7, 7, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -85,9 +85,9 @@
 
 .login-container .login-container-buttons button:hover {
   cursor: pointer;
-  background: #a13c56;
-  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
-  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
+  background: #4897c5;
+  background: -webkit-gradient(linear, left top, right top, from(#7298df), color-stop(74%, #94d3df));
+  background: linear-gradient(90deg, #7298df 0%, #94d3df 74%);
   color: white;
 }
 /*# sourceMappingURL=loginScreen.css.map */

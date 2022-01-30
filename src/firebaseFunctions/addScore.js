@@ -51,6 +51,7 @@ export const addScoreThousand = async(name, score) => {
 }
 
 //Read
+//Read highscore from database 
 export const getAllScoresSumTen = async () => { 
     const data = await getDocs(userCollectionRefModeTen)
     return data 
@@ -62,4 +63,16 @@ export const getAllScoresSumHundred = async () => {
 export const getAllScoresSumThousand = async () => { 
     const data = await getDocs(userCollectionRefModeThousand)
     return data 
+}
+
+//Read personal highscore from database 
+export const getPersonalScore = async (docName, name) => { 
+    const docRef = doc(database, docName, name);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+        return docSnap.data().score
+    } else {
+        return "No Score yet!";
+    }
 }

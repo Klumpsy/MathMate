@@ -21,7 +21,7 @@ const MathTester = () => {
   const score = useSelector(checkScore);
   const userName = useSelector(selectUserName)
   const gameMode = useSelector(currentGameMode);
-  const gameLength = useSelector(gameStatus)
+  const gameLength = useSelector(gameStatus);
   const dispatch = useDispatch();
 
   //sum state
@@ -110,13 +110,15 @@ const MathTester = () => {
       <div className="timer">
         <Timer />
       </div>
-      <div className="current-game-sum">
-        <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
-        <form onSubmit={handleSubmit} className="form">
-          <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
-          <button type="submit" className="submit-button">submit</button>
-        </form>
-      </div>
+      {gameLength === "playing" &&
+        <div className="current-game-sum">
+          <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+          <form onSubmit={handleSubmit} className="form">
+            <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
+            <button type="submit" className="submit-button">submit</button>
+          </form>
+        </div>
+      }
     </div>
   )
 };

@@ -1,0 +1,45 @@
+import React, { useEffect, useState } from 'react';
+import "./personalDashboard.css";
+
+
+//Redux
+import { useDispatch, useSelector } from "react-redux";
+import { selectUserName } from "../../reducers/userSlice";
+
+//Firebase
+import { getPersonalScore } from '../../firebaseFunctions/addScore';
+
+const PersonalDashboard = () => {
+    const userName = useSelector(selectUserName);
+
+    const [tenScore, setTenScore] = useState(null);
+    const [hundredScore, setHundredScore] = useState(null);
+    const [thousandScore, setThousandScore] = useState(null);
+
+    useEffect(() => {
+        const getScores = async () => {
+            const dataTen = await getPersonalScore("sumTen", userName)
+            setTenScore(dataTen)
+            const dataHundred = await getPersonalScore("sumHundred", userName)
+            setHundredScore(dataHundred)
+            const dataThousand = await getPersonalScore("sumThousand", userName)
+            setThousandScore(dataThousand)
+        }
+        getScores()
+    }, [])
+
+    return (
+        <div className="personal-dashboard-container">
+            <div className="personal-dashboard">
+                <h2>Your personal Stats</h2>
+                <ul className="personal-score">
+                    <li>Best 10 sum score: <p>{tenScore}</p></li>
+                    <li>Best 100 sum score: <p>{hundredScore}</p></li>
+                    <li>Best 1000 sum score: <p>{thousandScore}</p></li>
+                </ul>
+            </div>
+        </div>
+    )
+};
+
+export default PersonalDashboard;

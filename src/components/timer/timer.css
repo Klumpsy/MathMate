@@ -13,24 +13,22 @@
 
 .timer-container span {
   font-size: 2rem;
-  color: #ad5b5b;
+  color: #0f0e0e;
   font-weight: 600;
 }
 
 .timer-container button {
-  background: #a13c56;
-  background: -webkit-gradient(linear, left top, right top, from(#a13c56), color-stop(74%, #a8473b));
-  background: linear-gradient(90deg, #a13c56 0%, #a8473b 74%);
-  color: white;
+  background-color: #8de08d;
+  color: #080808;
+  font-weight: 700;
   font-size: 18px;
   padding: 10px 40px;
+  border: 2px solid black;
 }
 
 .timer-container button:hover {
   cursor: pointer;
-  background: #b95c73;
-  background: -webkit-gradient(linear, left top, right top, from(#b16276), color-stop(74%, #b37169));
-  background: linear-gradient(90deg, #b16276 0%, #b37169 74%);
+  background-color: #c0ecc0;
 }
 
 .timer-container button:disabled {

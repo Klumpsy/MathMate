@@ -64,7 +64,7 @@
         border-radius: 40px; 
         overflow: hidden; 
         @include navBarColor; 
-        color: white; 
+        color: rgb(15, 15, 15); 
         font-size: 20px;
         border: 2px solid black;
         .math-tester-games-button-container { 
@@ -74,6 +74,7 @@
             justify-content: space-between;
             align-items: center;
             padding-top: 20px;
+            font-weight: 700;
             button { 
                 width: 100%; 
                 padding: 10px;

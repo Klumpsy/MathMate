@@ -18,6 +18,7 @@ import MathTester from "./components/mathTester/MathTester";
 import Navbar from "./components/navbar/Navbar"; 
 import LoginScreen from "./components/loginScreen/LoginScreen"; 
 import Statspage from "./components/statsPage/Statspage";
+import PersonalDashboard from "./components/personalDashboard/PersonalDashboard";
 
 //styling
 import "./app.css"
@@ -51,6 +52,7 @@ function App() {
         <Routes>
           <Route path="/" element = { <MathTester/>}/>
           <Route path="/stats" element ={<Statspage/>}/>
+          <Route path = "/personalStats" element = {<PersonalDashboard/>}/>
         </Routes>
         :
         <div className = "login-screen-container">

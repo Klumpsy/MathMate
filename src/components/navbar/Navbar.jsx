@@ -7,6 +7,7 @@ import Statspage from '../statsPage/Statspage';
 import { FiLogOut } from "react-icons/fi";
 import { BsTrophy } from "react-icons/bs";
 import { CgGames } from "react-icons/cg";
+import { BsFilePerson } from "react-icons/bs";
 
 //Router
 import { Link } from 'react-router-dom';
@@ -20,11 +21,13 @@ import mathMateLogo from "../../images/MathMateLogo.png";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { selectUserEmail, selectUserName } from "../../reducers/userSlice";
+import { setGameStatusNone } from '../../reducers/timerSlice';
 
 const Navbar = ({ handleSignOut }) => {
     const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
     const userEmail = useSelector(selectUserEmail);
+
 
     return (
         <div className="nav-bar-container">
@@ -39,6 +42,9 @@ const Navbar = ({ handleSignOut }) => {
                 </Link>
                 <Link to="/stats">
                     <BsTrophy className="nav-bar-trophy" size={35} />
+                </Link>
+                <Link to="/personalStats">
+                    <BsFilePerson className="nav-bar-personal-dashboard" size={35} />
                 </Link>
             </div>
             <div className="nav-profile-container">
