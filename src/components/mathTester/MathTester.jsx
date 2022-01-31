@@ -4,6 +4,7 @@ import "./mathTester.css";
 
 //Components
 import Timer from "../timer/Timer"
+import GameSummery from '../gameSummery/GameSummery';
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -11,6 +12,7 @@ import { setRightAnswer, setWrongAnswer, setResetScore, checkScore } from "../..
 import { setGameModeTen, setGameModeHundred, setGameModeThousand, currentGameMode } from "../../reducers/gameModeSlice";
 import { selectUserName } from "../../reducers/userSlice";
 import { gameStatus, timerStatus } from "../../reducers/timerSlice";
+import { addToSummery, removeSummery, showSummery } from '../../reducers/gameSummerySlice';
 
 //Firebase Functions
 import { addScoreTen, addScoreHundred, addScoreThousand } from '../../firebaseFunctions/addScore';
@@ -50,6 +52,7 @@ const MathTester = () => {
     }
     else if (event.target[0].value == sum.answer) {
       dispatch(setRightAnswer())
+      dispatch(addToSummery({ sum, result: true, givenAnswer: event.target[0].value }))
       event.target[0].value = "";
     }
     else if (event.target[0].value != "" && event.target.value != sum.answer) {
@@ -57,8 +60,9 @@ const MathTester = () => {
         event.target[0].value = "";
       } else {
         dispatch(setWrongAnswer())
-        event.target[0].value = "";
       }
+      dispatch(addToSummery({ sum, result: false, givenAnswer: event.target[0].value }))
+      event.target[0].value = "";
     }
     else {
       return
@@ -87,39 +91,46 @@ const MathTester = () => {
         default: return
       }
 
-      dispatch(setResetScore())
+      dispatch(setResetScore());
     }
   }, [gameLength])
 
   return (
-    <div className="math-tester-container">
-      <div className="math-tester-games-button">
-        <div className="math-tester-games-button-container">
-          <p>Games</p>
-          <button onClick={() => dispatch(setGameModeTen())}>10</button>
-          <button onClick={() => dispatch(setGameModeHundred())}>100</button>
-          <button onClick={() => dispatch(setGameModeThousand())}>1000</button>
-        </div>
-      </div>
-      <div className="current-game-mode">
-        <h2>Current GameMode: {gameMode.gameMode}</h2>
-      </div>
-      <div className="current-game-score">
-        <h1>Score: {score.score}</h1>
-      </div>
-      <div className="timer">
-        <Timer />
-      </div>
-      {gameLength === "playing" &&
-        <div className="current-game-sum">
-          <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
-          <form onSubmit={handleSubmit} className="form">
-            <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
-            <button type="submit" className="submit-button">submit</button>
-          </form>
-        </div>
+    <>
+      {
+        gameLength === "done" ?
+          <GameSummery />
+          :
+          <div className="math-tester-container">
+            <div className="math-tester-games-button">
+              <div className="math-tester-games-button-container">
+                <p>Games</p>
+                <button onClick={() => dispatch(setGameModeTen())}>10</button>
+                <button onClick={() => dispatch(setGameModeHundred())}>100</button>
+                <button onClick={() => dispatch(setGameModeThousand())}>1000</button>
+              </div>
+            </div>
+            <div className="current-game-mode">
+              <h2>Current GameMode: {gameMode.gameMode}</h2>
+            </div>
+            <div className="current-game-score">
+              <h1>Score: {score.score}</h1>
+            </div>
+            <div className="timer">
+              <Timer />
+            </div>
+            {gameLength === "playing" &&
+              <div className="current-game-sum">
+                <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+                <form onSubmit={handleSubmit} className="form">
+                  <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
+                  <button type="submit" className="submit-button">submit</button>
+                </form>
+              </div>
+            }
+          </div>
       }
-    </div>
+    </>
   )
 };
 

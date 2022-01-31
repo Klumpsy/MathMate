@@ -30,6 +30,8 @@
   border: 2px solid black;
   border-radius: 20px;
   padding: 5px;
+  background: #dfd899;
+  background: linear-gradient(196deg, #ddd69d 0%, rgba(241, 211, 150, 0.853) 50%, #f3e9db 100%);
 }
 
 .personal-dashboard-container .personal-dashboard .personal-score {

@@ -1,0 +1,45 @@
+@import "../../typography"; 
+
+.game-summery-container { 
+    @include mainTypography; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%; 
+    height: 100%; 
+    font-size: 18px; 
+    padding-top: 3rem;
+    .game-summery { 
+    padding: 10px; 
+    border-radius: 10px;
+    width: 400px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black; 
+    background: rgb(34, 34, 30);
+    background: linear-gradient(196deg, rgb(107, 107, 106) 0%, rgba(24, 23, 23, 0.853) 50%, rgb(93, 92, 89) 100%);
+    h2 { 
+        color: white; 
+    } 
+    .right-answer { 
+        color: rgb(35, 136, 35);
+        }
+    .wrong-answer { 
+        color: red; 
+        }
+    }
+    .back-to-game-button { 
+        width: 100%; 
+        padding: 10px;
+        border: none; 
+        font-size: 18px;
+        border-radius: 5px;
+        background-color: rgb(170, 226, 170); 
+        &:hover { 
+            background-color: rgb(119, 223, 209);
+            cursor: pointer;
+        }
+    }
+}
