@@ -10,11 +10,14 @@
         font-weight: 600;
     }
     button { 
-        background-color: rgb(141, 224, 141);
+        background-color: rgb(122, 206, 122);
         color: rgb(8, 8, 8); 
         font-weight: 700; 
-        font-size: 18px;
-        padding: 10px 40px;
+        font-size: 28px;
+        text-align: center;
+        width: 120px;
+        height: 120px; 
+        border-radius: 50%;
         border: 2px solid black;
         &:hover { 
             cursor: pointer;   

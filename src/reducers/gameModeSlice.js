@@ -1,27 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    gameMode: "ten"
+    gameMode: "ten",
+    gameType: "plus"
 };
 
 const gameModeSlice = createSlice({
   name: "gameMode",
   initialState,
   reducers: {
-      setGameModeTen: (state) => { 
-        state.gameMode = "ten"
-      }, 
-      setGameModeHundred: (state) => { 
-        state.gameMode = "hundred"
-      },
-      setGameModeThousand: (state) => { 
-        state.gameMode = "thousand"
-      } 
+      setGameMode: (state, action) => { 
+        state.gameMode = action.payload.gameMode
+        state.gameType = action.payload.gameType
+      }
   },
 });
 
-export const {setGameModeTen, setGameModeHundred, setGameModeThousand} = gameModeSlice.actions;
+export const {setGameMode} = gameModeSlice.actions;
 
-export const currentGameMode = state => state.gameMode
+export const currentGameMode = state => state.gameMode.gameMode
+export const currentGameType = state => state.gameMode.gameType
 
 export default gameModeSlice.reducer;

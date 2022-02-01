@@ -20,6 +20,8 @@
   padding: 10px;
   border-radius: 10px;
   width: 400px;
+  max-height: 1000px;
+  overflow-x: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -27,19 +29,22 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   border: 2px solid black;
-  background: #22221e;
-  background: linear-gradient(196deg, #6b6b6a 0%, rgba(24, 23, 23, 0.853) 50%, #5d5c59 100%);
+  background: #2e3336;
+  background: -webkit-gradient(linear, left top, right top, from(#2e3136), color-stop(74%, #3b4142));
+  background: linear-gradient(90deg, #2e3136 0%, #3b4142 74%);
 }
 
 .game-summery-container .game-summery h2 {
   color: white;
+  font-size: 3rem;
+}
+
+.game-summery-container .game-summery h3 {
+  color: #aeeeec;
 }
 
 .game-summery-container .game-summery .right-answer {
@@ -57,6 +62,7 @@
   font-size: 18px;
   border-radius: 5px;
   background-color: #aae2aa;
+  margin-top: 20px;
 }
 
 .game-summery-container .back-to-game-button:hover {

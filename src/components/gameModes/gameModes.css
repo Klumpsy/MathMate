@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
+.math-tester-games-button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  overflow: hidden;
+  background: #2e3336;
+  background: -webkit-gradient(linear, left top, right top, from(#2e3136), color-stop(74%, #3b4142));
+  background: linear-gradient(90deg, #2e3136 0%, #3b4142 74%);
+  color: #0f0f0f;
+  font-size: 20px;
+  border: 2px solid black;
+}
+
+.math-tester-games-button .math-tester-games-button-container {
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  font-weight: 700;
+  color: #aeeeec;
+}
+
+.math-tester-games-button .math-tester-games-button-container button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: #221c1d;
+}
+
+.math-tester-games-button .math-tester-games-button-container button:hover {
+  cursor: pointer;
+  background-color: #352f2f;
+}
+
+.math-tester-games-button:hover {
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  height: 700px;
+}
+/*# sourceMappingURL=gameModes.css.map */

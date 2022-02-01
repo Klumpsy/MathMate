@@ -2,6 +2,8 @@
 @import "../../typography"; 
 
 .nav-bar-container { 
+    position: absolute; 
+    top: 0px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,29 +23,29 @@
         }
     }
     .nav-bar-links { 
-        color: rgb(0, 0, 0);
+        color: rgb(251, 251, 251);
         width: 250px; 
         display: flex;
         justify-content: space-around;
         .nav-bar-trophy { 
             text-decoration: none;
-            color: black;
+            color: rgb(246, 243, 243);
             &:hover { 
-                color: rgb(236, 202, 121);
+                @include accentColor;
             }
         }
         .nav-bar-controller { 
             text-decoration: none;
-            color: black; 
+            color: rgb(248, 246, 246); 
             &:hover { 
-                color: rgb(229, 230, 217); 
+                @include accentColor;
             }
         }
         .nav-bar-personal-dashboard { 
             text-decoration: none;
-            color: black; 
+            color: rgb(255, 255, 255); 
             &:hover { 
-                color: rgb(44, 87, 36); 
+                @include accentColor;
             }
         }
     }
@@ -64,11 +66,12 @@
             }
             p { 
                 font-size: 20px;
+                color: white;
             }
         }
         .nav-bar-logout { 
             margin-right: 20px;
-            color: rgb(0, 0, 0); 
+            color: rgb(248, 244, 244); 
             }
             .logout { 
                 &:hover { 

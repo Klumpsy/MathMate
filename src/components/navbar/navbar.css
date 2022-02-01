@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
 .nav-bar-container {
+  position: absolute;
+  top: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,9 +16,9 @@
   border-radius: 0px 0px 20px 20px;
   border-bottom: 2px solid #13141a;
   font-family: 'DM Sans', sans-serif;
-  background: #4897c5;
-  background: -webkit-gradient(linear, left top, right top, from(#7298df), color-stop(74%, #94d3df));
-  background: linear-gradient(90deg, #7298df 0%, #94d3df 74%);
+  background: #2e3336;
+  background: -webkit-gradient(linear, left top, right top, from(#2e3136), color-stop(74%, #3b4142));
+  background: linear-gradient(90deg, #2e3136 0%, #3b4142 74%);
 }
 
 .nav-bar-container .nav-bar-logo {
@@ -33,7 +35,7 @@
 }
 
 .nav-bar-container .nav-bar-links {
-  color: black;
+  color: #fbfbfb;
   width: 250px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,29 +46,29 @@
 
 .nav-bar-container .nav-bar-links .nav-bar-trophy {
   text-decoration: none;
-  color: black;
+  color: #f6f3f3;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-trophy:hover {
-  color: #ecca79;
+  color: #aeeeec;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-controller {
   text-decoration: none;
-  color: black;
+  color: #f8f6f6;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-controller:hover {
-  color: #e5e6d9;
+  color: #aeeeec;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-personal-dashboard {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 .nav-bar-container .nav-bar-links .nav-bar-personal-dashboard:hover {
-  color: #2c5724;
+  color: #aeeeec;
 }
 
 .nav-bar-container .nav-profile-container {
@@ -103,11 +105,12 @@
 
 .nav-bar-container .nav-profile-container .nav-user-container p {
   font-size: 20px;
+  color: white;
 }
 
 .nav-bar-container .nav-profile-container .nav-bar-logout {
   margin-right: 20px;
-  color: black;
+  color: #f8f4f4;
 }
 
 .nav-bar-container .nav-profile-container .logout:hover {

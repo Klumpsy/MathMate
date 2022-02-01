@@ -22,7 +22,7 @@ const sumCheckerSlice = createSlice({
 
 export const {setRightAnswer, setWrongAnswer, setResetScore} = sumCheckerSlice.actions;
 
-export const checkScore = state => state.score; 
+export const checkScore = state => state.score.score; 
 
 export default sumCheckerSlice.reducer;
 

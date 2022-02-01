@@ -19,14 +19,13 @@ import testProfilePicture from "../../images/profile.jpg";
 import mathMateLogo from "../../images/MathMateLogo.png";
 
 //Redux
-import { useDispatch, useSelector } from "react-redux";
-import { selectUserEmail, selectUserName } from "../../reducers/userSlice";
-import { setGameStatusNone } from '../../reducers/timerSlice';
+import { useSelector } from "react-redux";
+import { selectUserEmail, selectUserName, selectUserImage } from "../../reducers/userSlice";
 
 const Navbar = ({ handleSignOut }) => {
-    const dispatch = useDispatch();
     const userName = useSelector(selectUserName);
     const userEmail = useSelector(selectUserEmail);
+    const userImage = useSelector(selectUserImage);
 
 
     return (
@@ -50,7 +49,7 @@ const Navbar = ({ handleSignOut }) => {
             <div className="nav-profile-container">
                 <div className="nav-user-container">
                     <p>{userName}</p>
-                    <img className="nav-bar-profile-picture " src={testProfilePicture} />
+                    <img className="nav-bar-profile-picture " src={userImage} />
                 </div>
                 <div className="nav-bar-logout">
                     <FiLogOut className="logout" size={30} onClick={handleSignOut} />

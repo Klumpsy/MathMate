@@ -1,11 +1,10 @@
 @mixin navBarColor {
-    background: rgb(72, 151, 197);
-    background: linear-gradient(90deg, rgb(114, 152, 223) 0%, rgb(148, 211, 223) 74%);    
+    background: rgb(46, 51, 54);
+    background: linear-gradient(90deg, rgb(46, 49, 54) 0%, rgb(59, 65, 66) 74%);    
 } 
 
-@mixin navBarColorHover {
-    background: rgb(72, 151, 197);
-    background: linear-gradient(90deg, rgb(114, 152, 223) 0%, rgb(148, 211, 223) 74%);  
+@mixin accentColor {
+    color: #aeeeec;   
 } 
 
 @mixin backGroundColor { 
@@ -21,16 +20,16 @@
 }
 
 @mixin highScoreModeTen { 
-    background: rgb(97, 145, 151);
-    background: linear-gradient(90deg, rgb(103, 167, 156) 0%, rgb(175, 154, 98)74%); 
+    background: #6e9291; 
+    border: 2px solid #38594d; 
 }
 
 @mixin highScoreModeHundred { 
-    background: rgb(168, 81, 103);
-    background: linear-gradient(90deg, rgb(167, 121, 132) 0%, rgb(206, 103, 94)74%); 
+    background: rgb(97, 145, 151);
+    border: 2px solid #38594d; 
 }
 
 @mixin highScoreModeThousand{ 
-    background: rgb(106, 135, 180);
-    background: linear-gradient(90deg, rgb(104, 75, 107) 0%, rgb(119, 113, 172)74%); 
+    background: #49a6a3; 
+    border: 2px solid #38594d; 
 }

@@ -5,17 +5,18 @@ import "./mathTester.css";
 //Components
 import Timer from "../timer/Timer"
 import GameSummery from '../gameSummery/GameSummery';
+import GameModes from '../gameModes/GameModes';
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
-import { setRightAnswer, setWrongAnswer, setResetScore, checkScore } from "../../reducers/sumCheckerSlice";
-import { setGameModeTen, setGameModeHundred, setGameModeThousand, currentGameMode } from "../../reducers/gameModeSlice";
+import { setRightAnswer, setWrongAnswer, checkScore } from "../../reducers/sumCheckerSlice";
+import { currentGameMode, currentGameType } from "../../reducers/gameModeSlice";
 import { selectUserName } from "../../reducers/userSlice";
 import { gameStatus, timerStatus } from "../../reducers/timerSlice";
-import { addToSummery, removeSummery, showSummery } from '../../reducers/gameSummerySlice';
+import { addToSummery } from '../../reducers/gameSummerySlice';
 
 //Firebase Functions
-import { addScoreTen, addScoreHundred, addScoreThousand } from '../../firebaseFunctions/addScore';
+import { addScore } from '../../firebaseFunctions/addScore';
 
 const MathTester = () => {
 
@@ -23,7 +24,9 @@ const MathTester = () => {
   const score = useSelector(checkScore);
   const userName = useSelector(selectUserName)
   const gameMode = useSelector(currentGameMode);
+  const gameType = useSelector(currentGameType)
   const gameLength = useSelector(gameStatus);
+  const timer = useSelector(timerStatus)
   const dispatch = useDispatch();
 
   //sum state
@@ -41,6 +44,18 @@ const MathTester = () => {
       answer
     }
     setSum(sumObject);
+  }
+
+  const createMultiplySum = (multiply = 1) => {
+    const randomNumber = Math.floor(Math.random() * 10);
+    const answer = randomNumber * multiply;
+
+    const sumMultiplyObject = {
+      number1: randomNumber,
+      number2: multiply,
+      answer
+    }
+    setSum(sumMultiplyObject);
   }
 
   //Handle user submit 
@@ -70,30 +85,43 @@ const MathTester = () => {
   }
 
   useEffect(() => {
-    if (gameMode.gameMode === "ten") {
-      createSum(10, 10);
-    } else if (gameMode.gameMode === "hundred") {
-      createSum(100, 100)
-    } else if (gameMode.gameMode === "thousand") {
-      createSum(1000, 1000)
+    switch (gameMode) {
+      case 'ten': createSum(10, 10)
+        break
+      case 'hundred': createSum(100, 100)
+        break
+      case 'thousand': createSum(1000, 1000)
+        break
+      case 'multiplyThree': createMultiplySum(3)
+        break
+      case 'multiplyFive': createMultiplySum(5)
+        break
+      case 'multiplySeven': createMultiplySum(7)
+        break
+      default: createSum(10, 10)
     }
   }, [gameMode, score])
 
   useEffect(() => {
     if (gameLength === "done") {
-      switch (gameMode.gameMode) {
-        case "ten": addScoreTen(userName, score.score)
+      switch (gameMode) {
+        case "ten": addScore(userName, "sumTen", score)
           break
-        case "hundred": addScoreHundred(userName, score.score)
+        case "hundred": addScore(userName, "sumHundred", score)
           break
-        case "thousand": addScoreThousand(userName, score.score)
+        case "thousand": addScore(userName, "sumThousand", score)
+          break
+        case "multiplyThree": addScore(userName, "multiplyThree", score)
+          break
+        case "multiplyFive": addScore(userName, "multiplyFive", score)
+          break
+        case "multiplySeven": addScore(userName, "multiplySeven", score)
           break
         default: return
       }
-
-      dispatch(setResetScore());
     }
   }, [gameLength])
+
 
   return (
     <>
@@ -102,26 +130,26 @@ const MathTester = () => {
           <GameSummery />
           :
           <div className="math-tester-container">
-            <div className="math-tester-games-button">
-              <div className="math-tester-games-button-container">
-                <p>Games</p>
-                <button onClick={() => dispatch(setGameModeTen())}>10</button>
-                <button onClick={() => dispatch(setGameModeHundred())}>100</button>
-                <button onClick={() => dispatch(setGameModeThousand())}>1000</button>
-              </div>
-            </div>
+            {
+              !timer && <GameModes />
+            }
             <div className="current-game-mode">
-              <h2>Current GameMode: {gameMode.gameMode}</h2>
+              <h2>Current GameMode: {gameMode}</h2>
             </div>
             <div className="current-game-score">
-              <h1>Score: {score.score}</h1>
+              <h1>Score: {score}</h1>
             </div>
             <div className="timer">
               <Timer />
             </div>
             {gameLength === "playing" &&
               <div className="current-game-sum">
-                <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+                {
+                  gameType === "plus" && <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+                }
+                {
+                  gameType === "multiply" && <span className="math-tester-sum">{`${sum.number1} x ${sum.number2}`}</span>
+                }
                 <form onSubmit={handleSubmit} className="form">
                   <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
                   <button type="submit" className="submit-button">submit</button>

@@ -34,12 +34,14 @@ const Timer = () => {
     }
 
     const checkGameModeForTime = () => {
-        if (gameMode.gameMode === "ten") {
+        if (gameMode === "ten") {
             setTime(30)
-        } else if (gameMode.gameMode === "hundred") {
+        } else if (gameMode === "hundred") {
             setTime(60)
-        } else if (gameMode.gameMode === "thousand") {
+        } else if (gameMode === "thousand") {
             setTime(120)
+        } else {
+            setTime(45)
         }
     }
 

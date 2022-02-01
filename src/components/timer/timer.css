@@ -18,11 +18,14 @@
 }
 
 .timer-container button {
-  background-color: #8de08d;
+  background-color: #7ace7a;
   color: #080808;
   font-weight: 700;
-  font-size: 18px;
-  padding: 10px 40px;
+  font-size: 28px;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
   border: 2px solid black;
 }
 

@@ -1,10 +1,13 @@
+import { useEffect } from "react";
+
 //Routing
 import {
   BrowserRouter,
   Routes,
-  Route, 
-  useNavigate
+  Route
 } from "react-router-dom";
+
+import { useLocation } from "react-router";
 
 //Firebase
 import {auth, provider} from "./firebase"; 
@@ -12,6 +15,7 @@ import {auth, provider} from "./firebase";
 //Redux
 import { useDispatch, useSelector } from "react-redux";
 import { setActiveUser, setLogoutUser, selectUserEmail, selectUserName } from "./reducers/userSlice"; 
+import { setGameStatusNone, setStop } from "./reducers/timerSlice";
 
 //components 
 import MathTester from "./components/mathTester/MathTester";
@@ -28,13 +32,14 @@ function App() {
   const userName = useSelector(selectUserName); 
   const userEmail = useSelector(selectUserEmail); 
 
-  const navigate = useNavigate()
+  const location = useLocation(); 
 
   const handleSignIn = () => { 
     auth.signInWithPopup(provider).then(result => { 
         dispatch(setActiveUser({ 
           userName: result.user.displayName, 
-          email: result.user.email
+          userEmail: result.user.email,
+          userImage: result.user.photoURL
         }))
     })
   }
@@ -44,6 +49,13 @@ function App() {
         dispatch(setLogoutUser())
       }).catch(err => alert(err.message))
   }
+
+  useEffect(() => {
+    if(location.pathname != "/") { 
+      dispatch(setGameStatusNone()); 
+      dispatch(setStop()); 
+    }
+  }, [location])
   
   return (
       <div className = "application-container">

@@ -1,4 +1,5 @@
 @import "../../typography"; 
+@import "../../colors"; 
 
 .game-summery-container { 
     @include mainTypography; 
@@ -13,16 +14,20 @@
     padding: 10px; 
     border-radius: 10px;
     width: 400px; 
+    max-height: 1000px;
+    overflow-x: auto; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     border: 2px solid black; 
-    background: rgb(34, 34, 30);
-    background: linear-gradient(196deg, rgb(107, 107, 106) 0%, rgba(24, 23, 23, 0.853) 50%, rgb(93, 92, 89) 100%);
+    @include navBarColor;
     h2 { 
         color: white; 
+        font-size: 3rem;
     } 
+    h3 { 
+        @include  accentColor; 
+    }
     .right-answer { 
         color: rgb(35, 136, 35);
         }
@@ -37,6 +42,7 @@
         font-size: 18px;
         border-radius: 5px;
         background-color: rgb(170, 226, 170); 
+        margin-top: 20px; 
         &:hover { 
             background-color: rgb(119, 223, 209);
             cursor: pointer;
