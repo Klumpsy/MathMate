@@ -15,24 +15,44 @@ const PersonalDashboard = () => {
     const [tenScore, setTenScore] = useState(null);
     const [hundredScore, setHundredScore] = useState(null);
     const [thousandScore, setThousandScore] = useState(null);
+    const [multiplyTwo, setMultiplyTwo] = useState(null);
     const [multiplyThree, setMultiplyThree] = useState(null);
+    const [multiplyFour, setMultiplyFour] = useState(null);
     const [multiplyFive, setMultiplyFive] = useState(null);
+    const [multiplySix, setMultiplySix] = useState(null);
     const [multiplySeven, setMultiplySeven] = useState(null);
+    const [multiplyEight, setMultiplyEight] = useState(null);
+    const [multiplyNine, setMultiplyNine] = useState(null);
+    const [multiplyMix, setMultiplyMix] = useState(null);
 
     useEffect(() => {
         const getScores = async () => {
+            let controller = new AbortController();
             const dataTen = await getPersonalScore("sumTen", userName)
-            setTenScore(dataTen)
+            setTenScore(dataTen);
             const dataHundred = await getPersonalScore("sumHundred", userName)
-            setHundredScore(dataHundred)
+            setHundredScore(dataHundred);
             const dataThousand = await getPersonalScore("sumThousand", userName)
-            setThousandScore(dataThousand)
+            setThousandScore(dataThousand);
+            const dataMultiplyTwo = await getPersonalScore("multiplyTwo", userName)
+            setMultiplyTwo(dataMultiplyTwo);
             const dataMultiplyThree = await getPersonalScore("multiplyThree", userName)
-            setMultiplyThree(dataMultiplyThree)
+            setMultiplyThree(dataMultiplyThree);
+            const dataMultiplyFour = await getPersonalScore("multiplyFour", userName)
+            setMultiplyFour(dataMultiplyFour);
             const dataMultiplyFive = await getPersonalScore("multiplyFive", userName)
-            setMultiplyFive(dataMultiplyFive)
+            setMultiplyFive(dataMultiplyFive);
+            const dataMultiplySix = await getPersonalScore("multiplySix", userName)
+            setMultiplySix(dataMultiplySix);
             const dataMultiplySeven = await getPersonalScore("multiplySeven", userName)
-            setMultiplySeven(dataMultiplySeven)
+            setMultiplySeven(dataMultiplySeven);
+            const dataMultiplyEight = await getPersonalScore("multiplyEight", userName)
+            setMultiplyEight(dataMultiplyEight);
+            const dataMultiplyNine = await getPersonalScore("multiplyNine", userName)
+            setMultiplyNine(dataMultiplyNine);
+            const dataMultiplyMix = await getPersonalScore("mix", userName)
+            setMultiplyMix(dataMultiplyMix);
+            return () => controller?.abort();
         }
         getScores()
     }, [])
@@ -45,9 +65,15 @@ const PersonalDashboard = () => {
                     <li>Best + 10 sum score: <p>{tenScore}</p></li>
                     <li>Best + 100 sum score: <p>{hundredScore}</p></li>
                     <li>Best + 1000 sum score: <p>{thousandScore}</p></li>
+                    <li>Best x 2 sum score: <p>{multiplyTwo}</p></li>
                     <li>Best x 3 sum score: <p>{multiplyThree}</p></li>
+                    <li>Best x 4 sum score: <p>{multiplyFour}</p></li>
                     <li>Best x 5 sum score: <p>{multiplyFive}</p></li>
+                    <li>Best x 6 sum score: <p>{multiplySix}</p></li>
                     <li>Best x 7 sum score: <p>{multiplySeven}</p></li>
+                    <li>Best x 8 sum score: <p>{multiplyEight}</p></li>
+                    <li>Best x 9 sum score: <p>{multiplyNine}</p></li>
+                    <li>Best Mix sum score: <p>{multiplyMix}</p></li>
                 </ul>
             </div>
         </div>

@@ -13,18 +13,23 @@
     color: rgb(15, 15, 15); 
     font-size: 20px;
     border: 2px solid black;
+    h2 { 
+        font-size: 20px;
+        margin-bottom: 35px;
+    }
     .math-tester-games-button-container { 
         height: 500px; 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 25px;
         font-weight: 700;
         @include  accentColor; 
         button { 
             width: 100%; 
             padding: 10px;
+            margin-bottom: 5px;
             color: white; 
             background-color: rgb(34, 28, 29);
             &:hover { 
@@ -36,6 +41,6 @@
     &:hover {  
         cursor: pointer;
         transition: .3s ease-in-out; 
-        height: 700px;
+        height: 650px;
     }
 }

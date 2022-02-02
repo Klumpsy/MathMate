@@ -58,6 +58,19 @@ const MathTester = () => {
     setSum(sumMultiplyObject);
   }
 
+  const createMultiplyMixSum = () => {
+    const randomNumberOne = Math.floor(Math.random() * 11);
+    const randomNumberTwo = Math.floor(Math.random() * 11);
+    const answer = randomNumberOne * randomNumberTwo;
+
+    const sumMultiplyMixObject = {
+      number1: randomNumberOne,
+      number2: randomNumberTwo,
+      answer
+    }
+    setSum(sumMultiplyMixObject);
+  }
+
   //Handle user submit 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -71,7 +84,7 @@ const MathTester = () => {
       event.target[0].value = "";
     }
     else if (event.target[0].value != "" && event.target.value != sum.answer) {
-      if (score.score == 0) {
+      if (score == 0) {
         event.target[0].value = "";
       } else {
         dispatch(setWrongAnswer())
@@ -92,11 +105,23 @@ const MathTester = () => {
         break
       case 'thousand': createSum(1000, 1000)
         break
+      case 'multiplyTwo': createMultiplySum(2)
+        break
       case 'multiplyThree': createMultiplySum(3)
+        break
+      case 'multiplyFour': createMultiplySum(4)
         break
       case 'multiplyFive': createMultiplySum(5)
         break
+      case 'multiplySix': createMultiplySum(6)
+        break
       case 'multiplySeven': createMultiplySum(7)
+        break
+      case 'multiplyEight': createMultiplySum(8)
+        break
+      case 'multiplyNine': createMultiplySum(9)
+        break
+      case 'mix': createMultiplyMixSum()
         break
       default: createSum(10, 10)
     }
@@ -111,11 +136,23 @@ const MathTester = () => {
           break
         case "thousand": addScore(userName, "sumThousand", score)
           break
+        case "multiplyTwo": addScore(userName, "multiplyTwo", score)
+          break
         case "multiplyThree": addScore(userName, "multiplyThree", score)
+          break
+        case "multiplyFour": addScore(userName, "multiplyFour", score)
           break
         case "multiplyFive": addScore(userName, "multiplyFive", score)
           break
+        case "multiplySix": addScore(userName, "multiplySix", score)
+          break
         case "multiplySeven": addScore(userName, "multiplySeven", score)
+          break
+        case "multiplyEight": addScore(userName, "multiplyEight", score)
+          break
+        case "multiplyNine": addScore(userName, "multiplyNine", score)
+          break
+        case "mix": addScore(userName, "mix", score)
           break
         default: return
       }

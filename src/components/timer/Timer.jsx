@@ -40,26 +40,34 @@ const Timer = () => {
             setTime(60)
         } else if (gameMode === "thousand") {
             setTime(120)
+        } else if (gameMode === "mix") {
+            setTime(90)
         } else {
             setTime(45)
         }
     }
 
     useEffect(() => {
+        let controller = new AbortController();
         checkGameModeForTime()
+        return () => controller?.abort();
     }, [gameMode])
 
     useEffect(() => {
+        let controller = new AbortController();
         if (hasTimerEnded) {
             clearInterval(intervalID)
             setIntervalID(null)
             dispatch(setStop())
             dispatch(setGameStatusDone())
         }
+        return () => controller?.abort();
     }, [hasTimerEnded])
 
     useEffect(() => () => {
+        let controller = new AbortController();
         clearInterval(intervalID)
+        return () => controller?.abort();
     }, [])
 
     return (

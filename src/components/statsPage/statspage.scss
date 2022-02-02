@@ -14,26 +14,4 @@
         margin-bottom: 20px; 
         text-align: center;
     }
-    .high-score-container { 
-        min-height: 400px; 
-        overflow-x: auto;
-        .high-score-item { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 1px solid black;
-        }
-    }
-    .high-score-game-mode-ten { 
-        @include highScoreModeTen;
-        @include highScoreList; 
-    }
-    .high-score-game-mode-hundred {
-        @include highScoreList; 
-        @include highScoreModeHundred;
-    }
-    .high-score-game-mode-thousand{
-        @include highScoreList; 
-        @include highScoreModeThousand; 
-    }
 }

@@ -17,11 +17,23 @@ const GameModes = () => {
                 break
             case "+ 1000": dispatch(setGameMode({ gameMode: "thousand", gameType: "plus" }))
                 break
+            case "x 2": dispatch(setGameMode({ gameMode: "multiplyTwo", gameType: "multiply" }))
+                break
             case "x 3": dispatch(setGameMode({ gameMode: "multiplyThree", gameType: "multiply" }))
+                break
+            case "x 4": dispatch(setGameMode({ gameMode: "multiplyFour", gameType: "multiply" }))
                 break
             case "x 5": dispatch(setGameMode({ gameMode: "multiplyFive", gameType: "multiply" }))
                 break
+            case "x 6": dispatch(setGameMode({ gameMode: "multiplySix", gameType: "multiply" }))
+                break
             case "x 7": dispatch(setGameMode({ gameMode: "multiplySeven", gameType: "multiply" }))
+                break
+            case "x 8": dispatch(setGameMode({ gameMode: "multiplyEight", gameType: "multiply" }))
+                break
+            case "x 9": dispatch(setGameMode({ gameMode: "multiplyNine", gameType: "multiply" }))
+                break
+            case "mix": dispatch(setGameMode({ gameMode: "mix", gameType: "multiply" }))
                 break
             default: dispatch(setGameStatusNone())
         }
@@ -30,13 +42,19 @@ const GameModes = () => {
     return (
         <div className="math-tester-games-button">
             <div className="math-tester-games-button-container">
-                <p>Games</p>
-                <button onClick={setGame} value="10">+ 10</button>
-                <button onClick={setGame} value="100">+ 100</button>
-                <button onClick={setGame} value="1000">+ 1000</button>
-                <button onClick={setGame} value="x 3">x 3</button>
-                <button onClick={setGame} value="x 5">x 5</button>
-                <button onClick={setGame} value="x 7">x 7</button>
+                <h2>Games</h2>
+                <button onClick={setGame} >+ 10</button>
+                <button onClick={setGame} >+ 100</button>
+                <button onClick={setGame} >+ 1000</button>
+                <button onClick={setGame} >x 2</button>
+                <button onClick={setGame} >x 3</button>
+                <button onClick={setGame} >x 4</button>
+                <button onClick={setGame} >x 5</button>
+                <button onClick={setGame} >x 6</button>
+                <button onClick={setGame} >x 7</button>
+                <button onClick={setGame} >x 8</button>
+                <button onClick={setGame} >x 9</button>
+                <button onClick={setGame} >mix</button>
             </div>
         </div>
     )

@@ -19,17 +19,66 @@
     margin: 20px; 
 }
 
-@mixin highScoreModeTen { 
-    background: #6e9291; 
+@mixin high-score-plus-ten { 
+    background: rgb(70,90,180);
+    background: linear-gradient(356deg, rgba(70,90,180,1) 0%, rgba(113,135,120,1) 100%); 
     border: 2px solid #38594d; 
 }
 
-@mixin highScoreModeHundred { 
-    background: rgb(97, 145, 151);
+@mixin high-score-plus-hundred { 
+    background: rgb(188,200,79);
+    background: linear-gradient(356deg, rgba(188,200,79,1) 0%, rgba(113,135,120,1) 100%); 
     border: 2px solid #38594d; 
 }
 
-@mixin highScoreModeThousand{ 
-    background: #49a6a3; 
+@mixin high-score-plus-thousand { 
+    background: rgb(115,149,124);
+    background: linear-gradient(333deg, rgba(115,149,124,1) 0%, rgba(118,196,143,1) 100%);  
+    border: 2px solid #38594d; 
+}
+
+@mixin high-score-multiply-two{ 
+    background: rgb(79,144,200);
+    background: linear-gradient(356deg, rgba(79,144,200,1) 0%, rgba(113,135,120,1) 100%);  
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-three{ 
+    background: rgb(193,79,200);
+    background: linear-gradient(356deg, rgba(193,79,200,1) 0%, rgba(113,135,120,1) 100%); 
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-four{ 
+    background: rgb(200,79,105);
+    background: linear-gradient(356deg, rgba(200,79,105,1) 0%, rgba(113,135,120,1) 100%);  
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-five{ 
+    background: rgb(200,198,79);
+    background: linear-gradient(356deg, rgba(200,198,79,1) 0%, rgba(113,135,120,1) 100%);  
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-six{ 
+    background: rgb(200,136,79);
+    background: linear-gradient(356deg, rgba(200,136,79,1) 0%, rgba(113,135,120,1) 100%); 
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-seven{ 
+    background: rgb(79,199,200);
+    background: linear-gradient(356deg, rgba(79,199,200,1) 0%, rgba(113,135,120,1) 100%);  
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-eight{ 
+    background: rgb(150,79,200);
+    background: linear-gradient(356deg, rgba(150,79,200,1) 0%, rgba(113,135,120,1) 100%);  
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-nine{ 
+    background: rgb(128,200,79);
+    background: linear-gradient(356deg, rgba(128,200,79,1) 0%, rgba(113,135,120,1) 100%);  
+    border: 2px solid #38594d; 
+}
+@mixin high-score-multiply-mix{ 
+    background: rgb(243, 184, 73);
+    background: linear-gradient(356deg, rgb(243, 184, 73) 0%, rgba(113,135,120,1) 100%);  
     border: 2px solid #38594d; 
 }

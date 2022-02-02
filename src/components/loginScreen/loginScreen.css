@@ -81,13 +81,16 @@
   border: none;
   border-top: 1px solid black;
   font-size: 20px;
+  background: #2e3336;
+  background: -webkit-gradient(linear, left top, right top, from(#2e3136), color-stop(74%, #3b4142));
+  background: linear-gradient(90deg, #2e3136 0%, #3b4142 74%);
+  color: white;
 }
 
 .login-container .login-container-buttons button:hover {
   cursor: pointer;
-  background: #4897c5;
-  background: -webkit-gradient(linear, left top, right top, from(#7298df), color-stop(74%, #94d3df));
-  background: linear-gradient(90deg, #7298df 0%, #94d3df 74%);
-  color: white;
+  background: #4e5052;
+  background: -webkit-gradient(linear, left top, right top, from(#4e4f50), color-stop(74%, #515455));
+  background: linear-gradient(90deg, #4e4f50 0%, #515455 74%);
 }
 /*# sourceMappingURL=loginScreen.css.map */

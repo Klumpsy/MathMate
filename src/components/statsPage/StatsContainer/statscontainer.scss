@@ -1,0 +1,53 @@
+@import "../../../colors";
+
+.high-score-container { 
+    height: 400px; 
+    width: 300px;
+    overflow-x: auto;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 18px;
+    .high-score-item { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        border-bottom: 1px solid black;
+    }
+}
+
+.high-score-plus-ten { 
+    @include high-score-plus-ten; 
+}
+.high-score-plus-hundred { 
+    @include high-score-plus-hundred;
+}
+.high-score-plus-thousand { 
+    @include high-score-plus-thousand;
+}
+.high-score-multiply-two { 
+    @include high-score-multiply-two;
+}
+.high-score-multiply-three { 
+    @include high-score-multiply-three;
+}
+.high-score-multiply-four { 
+    @include high-score-multiply-four;
+}
+.high-score-multiply-five { 
+    @include high-score-multiply-five;
+}
+.high-score-multiply-six { 
+    @include high-score-multiply-six;
+}
+.high-score-multiply-seven { 
+    @include high-score-multiply-seven;
+}
+.high-score-multiply-eight { 
+    @include high-score-multiply-eight;
+}
+.high-score-multiply-nine { 
+    @include high-score-multiply-nine;
+}
+.high-score-multiply-mix { 
+    @include high-score-multiply-mix;
+}

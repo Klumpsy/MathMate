@@ -1,136 +1,97 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 
-import "./statspage.css"
+import "./statspage.css";
 
-//Icons
-import { FaMedal } from "react-icons/fa";
-import { BsFillPersonFill } from "react-icons/bs";
+//Components
+import StatsContainer from "./StatsContainer/StatsContainer";
 
 //Firebase
-import {
-    getAllScoresSumTen,
-    getAllScoresSumHundred,
-    getAllScoresSumThousand,
-    getAllScoresMultiplyThree,
-    getAllScoresMultiplyFive,
-    getAllScoresMultiplySeven
-} from '../../firebaseFunctions/addScore'
+import { getAllScores } from '../../firebaseFunctions/addScore';
 
 const Statspage = () => {
     const [userDataTen, setUserDataTen] = useState();
     const [userDataHundred, setUserDataHundred] = useState();
     const [userDataThousand, setUserDataThousand] = useState();
+    const [userDataMultiplyTwo, setDataMultiplyTwo] = useState();
     const [userDataMultiplyThree, setDataMultiplyThree] = useState();
+    const [userDataMultiplyFour, setDataMultiplyFour] = useState();
     const [userDataMultiplyFive, setDataMultiplyFive] = useState();
+    const [userDataMultiplySix, setDataMultiplySix] = useState();
     const [userDataMultiplySeven, setDataMultiplySeven] = useState();
+    const [userDataMultiplyEight, setDataMultiplyEight] = useState();
+    const [userDataMultiplyNine, setDataMultiplyNine] = useState();
+    const [userDataMultiplyMix, setDataMultiplyMix] = useState();
 
     useEffect(() => {
         const getUsers = async () => {
-            const dataTen = await getAllScoresSumTen();
+            let controller = new AbortController();
+            //Get scores from sumTen
+            const dataTen = await getAllScores("sumTen");
             const dataTenObjects = dataTen.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-            setUserDataTen((dataTenObjects.sort((a, b) => b.score - a.score)))
-            const dataHundred = await getAllScoresSumHundred();
+            setUserDataTen((dataTenObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from sumHundred
+            const dataHundred = await getAllScores("sumHundred");
             const dataHundredObjects = dataHundred.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-            setUserDataHundred((dataHundredObjects.sort((a, b) => b.score - a.score)))
-            const dataThousand = await getAllScoresSumThousand();
+            setUserDataHundred((dataHundredObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from sumThousand
+            const dataThousand = await getAllScores("sumThousand");
             const dataThousandObjects = dataThousand.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-            setUserDataThousand((dataThousandObjects.sort((a, b) => b.score - a.score)))
-            const dataMultiplyThree = await getAllScoresMultiplyThree()
+            setUserDataThousand((dataThousandObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Two 
+            const dataMultiplyTwo = await getAllScores("multiplyTwo")
+            const dataMultiplyTwoObjects = dataMultiplyTwo.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplyTwo((dataMultiplyTwoObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Three
+            const dataMultiplyThree = await getAllScores("multiplyThree")
             const dataMultiplyThreeObjects = dataMultiplyThree.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-            setDataMultiplyThree((dataMultiplyThreeObjects.sort((a, b) => b.score - a.score)))
-            const dataMultiplyFive = await getAllScoresMultiplyFive()
+            setDataMultiplyThree((dataMultiplyThreeObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Four 
+            const dataMultiplyFour = await getAllScores("multiplyFour")
+            const dataMultiplyFourObjects = dataMultiplyFour.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplyFour((dataMultiplyFourObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Five 
+            const dataMultiplyFive = await getAllScores("multiplyFive");
             const dataMultiplyFiveObjects = dataMultiplyFive.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-            setDataMultiplyFive((dataMultiplyFiveObjects.sort((a, b) => b.score - a.score)))
-            const dataMultiplySeven = await getAllScoresMultiplySeven()
+            setDataMultiplyFive((dataMultiplyFiveObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Six 
+            const dataMultiplySix = await getAllScores("multiplySix");
+            const dataMultiplySixObjects = dataMultiplySix.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplySix((dataMultiplySixObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Seven
+            const dataMultiplySeven = await getAllScores("multiplySeven");
             const dataMultiplySevenObjects = dataMultiplySeven.docs.map(doc => ({ ...doc.data(), id: doc.id }));
-            setDataMultiplySeven((dataMultiplySevenObjects.sort((a, b) => b.score - a.score)))
+            setDataMultiplySeven((dataMultiplySevenObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Eight
+            const dataMultiplyEight = await getAllScores("multiplyEight");
+            const dataMultiplyEightObjects = dataMultiplyEight.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplyEight((dataMultiplyEightObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Nine
+            const dataMultiplyNine = await getAllScores("multiplyNine");
+            const dataMultiplyNineObjects = dataMultiplyNine.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplyNine((dataMultiplyNineObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Mix
+            const dataMultiplyMix = await getAllScores("mix");
+            const dataMultiplyMixObjects = dataMultiplyMix.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplyMix((dataMultiplyMixObjects.sort((a, b) => b.score - a.score)));
+            return () => controller?.abort();
         }
         getUsers()
     }, [])
 
-    const priceChecker = (index) => {
-        switch (index) {
-            case 0: return <FaMedal size={20} style={{ color: "yellow" }} />
-            case 1: return <FaMedal size={20} style={{ color: "#bcc4c4" }} />
-            case 2: return <FaMedal size={20} style={{ color: "#d4a676" }} />
-            default: return <BsFillPersonFill size={20} style={{ color: "black" }} />
-        }
-    }
-
     return (
         <div className="high-score-list">
-            <div className="high-score-container high-score-game-mode-ten">
-                <h2>Highscore sum 10</h2>
-                {
-                    userDataTen?.map((user, index) => (
-                        <div key={user.id} className="high-score-item">
-                            {priceChecker(index)}
-                            <h3>{user.name}</h3>
-                            <p>{user.score}</p>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="high-score-container high-score-game-mode-hundred">
-                <h2>Highscore sum 100</h2>
-                {
-                    userDataHundred?.map((user, index) => (
-                        <div key={user.id} className="high-score-item">
-                            {priceChecker(index)}
-                            <h3>{user.name}</h3>
-                            <p>{user.score}</p>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="high-score-container high-score-game-mode-thousand">
-                <h2>Highscore sum 1000</h2>
-                {
-                    userDataThousand?.map((user, index) => (
-                        <div key={user.id} className="high-score-item">
-                            {priceChecker(index)}
-                            <h3>{user.name}</h3>
-                            <p>{user.score}</p>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="high-score-container high-score-game-mode-ten">
-                <h2>Highscore multiply 3</h2>
-                {
-                    userDataMultiplyThree?.map((user, index) => (
-                        <div key={user.id} className="high-score-item">
-                            {priceChecker(index)}
-                            <h3>{user.name}</h3>
-                            <p>{user.score}</p>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="high-score-container high-score-game-mode-ten">
-                <h2>Highscore multiply 5</h2>
-                {
-                    userDataMultiplyFive?.map((user, index) => (
-                        <div key={user.id} className="high-score-item">
-                            {priceChecker(index)}
-                            <h3>{user.name}</h3>
-                            <p>{user.score}</p>
-                        </div>
-                    ))
-                }
-            </div>
-            <div className="high-score-container high-score-game-mode-ten">
-                <h2>Highscore multiply 7</h2>
-                {
-                    userDataMultiplySeven?.map((user, index) => (
-                        <div key={user.id} className="high-score-item">
-                            {priceChecker(index)}
-                            <h3>{user.name}</h3>
-                            <p>{user.score}</p>
-                        </div>
-                    ))
-                }
-            </div>
+            <StatsContainer title="Sum 10" styleClass="high-score-plus-ten" mapData={userDataTen} />
+            <StatsContainer title="Sum 100" styleClass="high-score-plus-hundred" mapData={userDataHundred} />
+            <StatsContainer title="Sum 1000" styleClass="high-score-plus-thousand" mapData={userDataThousand} />
+            <StatsContainer title="Multiply 2" styleClass="high-score-multiply-two" mapData={userDataMultiplyTwo} />
+            <StatsContainer title="Multiply 3" styleClass="high-score-multiply-three" mapData={userDataMultiplyThree} />
+            <StatsContainer title="Multiply 4" styleClass="high-score-multiply-four" mapData={userDataMultiplyFour} />
+            <StatsContainer title="Multiply 5" styleClass="high-score-multiply-five" mapData={userDataMultiplyFive} />
+            <StatsContainer title="Multiply 6" styleClass="high-score-multiply-six" mapData={userDataMultiplySix} />
+            <StatsContainer title="Multiply 7" styleClass="high-score-multiply-seven" mapData={userDataMultiplySeven} />
+            <StatsContainer title="Multiply 8" styleClass="high-score-multiply-eight" mapData={userDataMultiplyEight} />
+            <StatsContainer title="Multiply 9" styleClass="high-score-multiply-nine" mapData={userDataMultiplyNine} />
+            <StatsContainer title="Multiply Mix" styleClass="high-score-multiply-mix" mapData={userDataMultiplyMix} />
         </div>
     )
 }

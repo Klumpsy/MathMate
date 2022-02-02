@@ -1,0 +1,94 @@
+.high-score-container {
+  height: 400px;
+  width: 300px;
+  overflow-x: auto;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+.high-score-container .high-score-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid black;
+}
+
+.high-score-plus-ten {
+  background: #465ab4;
+  background: linear-gradient(356deg, #465ab4 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-plus-hundred {
+  background: #bcc84f;
+  background: linear-gradient(356deg, #bcc84f 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-plus-thousand {
+  background: #73957c;
+  background: linear-gradient(333deg, #73957c 0%, #76c48f 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-two {
+  background: #4f90c8;
+  background: linear-gradient(356deg, #4f90c8 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-three {
+  background: #c14fc8;
+  background: linear-gradient(356deg, #c14fc8 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-four {
+  background: #c84f69;
+  background: linear-gradient(356deg, #c84f69 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-five {
+  background: #c8c64f;
+  background: linear-gradient(356deg, #c8c64f 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-six {
+  background: #c8884f;
+  background: linear-gradient(356deg, #c8884f 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-seven {
+  background: #4fc7c8;
+  background: linear-gradient(356deg, #4fc7c8 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-eight {
+  background: #964fc8;
+  background: linear-gradient(356deg, #964fc8 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-nine {
+  background: #80c84f;
+  background: linear-gradient(356deg, #80c84f 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+
+.high-score-multiply-mix {
+  background: #f3b849;
+  background: linear-gradient(356deg, #f3b849 0%, #718778 100%);
+  border: 2px solid #38594d;
+}
+/*# sourceMappingURL=statscontainer.css.map */
