@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b34e0835.css",
+    "main.js": "/static/js/main.2c982f6e.js",
+    "static/media/MathMateLogo.png": "/static/media/MathMateLogo.340fa8b4491897161b33.png",
+    "index.html": "/index.html",
+    "main.b34e0835.css.map": "/static/css/main.b34e0835.css.map",
+    "main.2c982f6e.js.map": "/static/js/main.2c982f6e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b34e0835.css",
+    "static/js/main.2c982f6e.js"
+  ]
+}
