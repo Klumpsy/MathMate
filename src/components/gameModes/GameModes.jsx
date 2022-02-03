@@ -9,6 +9,7 @@ import { setGameStatusNone } from '../../reducers/timerSlice';
 const GameModes = () => {
     const dispatch = useDispatch()
 
+    //This function will set the gamemode to the value of the pushed button. 
     const setGame = (e) => {
         switch (e.target.outerText) {
             case "+ 10": dispatch(setGameMode({ gameMode: "ten", gameType: "plus" }))

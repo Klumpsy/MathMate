@@ -3,7 +3,7 @@ import "./personalDashboard.css";
 
 
 //Redux
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectUserName } from "../../reducers/userSlice";
 
 //Firebase
@@ -12,6 +12,7 @@ import { getPersonalScore } from '../../firebaseFunctions/addScore';
 const PersonalDashboard = () => {
     const userName = useSelector(selectUserName);
 
+    //Local state 
     const [tenScore, setTenScore] = useState(null);
     const [hundredScore, setHundredScore] = useState(null);
     const [thousandScore, setThousandScore] = useState(null);
@@ -25,9 +26,10 @@ const PersonalDashboard = () => {
     const [multiplyNine, setMultiplyNine] = useState(null);
     const [multiplyMix, setMultiplyMix] = useState(null);
 
+    //Lifecyle - should return the scores for the logged user
     useEffect(() => {
+        let controller = new AbortController();
         const getScores = async () => {
-            let controller = new AbortController();
             const dataTen = await getPersonalScore("sumTen", userName)
             setTenScore(dataTen);
             const dataHundred = await getPersonalScore("sumHundred", userName)

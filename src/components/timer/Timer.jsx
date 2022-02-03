@@ -13,14 +13,17 @@ const Timer = () => {
     const gameMode = useSelector(currentGameMode);
     const dispatch = useDispatch();
 
+    //Local state 
     const [time, setTime] = useState(30)
     const [intervalID, setIntervalID] = useState(null)
     const hasTimerEnded = time <= 0
     const isTimerRunning = intervalID != null
 
+    //Fucntion for updating the timer 
     const update = () => {
         setTime(time => time - 1)
     }
+    //Function from starting the timer 
     const startTimer = () => {
         dispatch(setStart())
         dispatch(setGameStatusActive())
@@ -28,11 +31,13 @@ const Timer = () => {
             setIntervalID(setInterval(update, 1000))
         }
     }
+    //Function for resetting the timer 
     const resetSeconds = () => {
         checkGameModeForTime()
         dispatch(setGameStatusNone())
     }
 
+    //Function for checking the mode and returning the time according to the mode 
     const checkGameModeForTime = () => {
         if (gameMode === "ten") {
             setTime(30)
@@ -46,7 +51,7 @@ const Timer = () => {
             setTime(45)
         }
     }
-
+    //Lifecycle timer 
     useEffect(() => {
         let controller = new AbortController();
         checkGameModeForTime()
@@ -75,7 +80,7 @@ const Timer = () => {
             <span>Time: {time}</span>
             {
                 time === 0 ?
-                    <button disabled={timer} onClick={resetSeconds}>reset Timer 30</button>
+                    <button disabled={timer} onClick={resetSeconds}>reset Timer</button>
                     :
                     <button disabled={timer} onClick={startTimer}>Start</button>
             }

@@ -4,21 +4,21 @@ import 'firebase/compat/auth';
 import {getFirestore} from "@firebase/firestore"; 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBsNZ13cr-esFaJbdEmo2Z4-IktZ-yRcN4",
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
 
-    authDomain: "mathmate-804f9.firebaseapp.com",
+    authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
   
-    databaseURL: "https://mathmate-804f9-default-rtdb.europe-west1.firebasedatabase.app",
+    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
   
-    projectId: "mathmate-804f9",
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   
-    storageBucket: "mathmate-804f9.appspot.com",
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   
-    messagingSenderId: "984890868522",
+    messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
   
-    appId: "1:984890868522:web:60295cf386006acfb21453",
+    appId: process.env.REACT_APP_FIREBASE_APP_ID,
   
-    measurementId: "G-6HYYJGN4B7"  
+    measurementId: process.env.REACT_APP_MEASUREMENT_ID  
 }; 
 
 const firebaseApp = firebase.initializeApp(firebaseConfig); 

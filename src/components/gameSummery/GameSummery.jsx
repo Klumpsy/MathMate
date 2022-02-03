@@ -17,12 +17,14 @@ const GameSummery = () => {
     const gameType = useSelector(currentGameType)
     const dispatch = useDispatch()
 
+    //This function will reset the score, remove the current summery and set the gamestatus to "none"
     const handleNewGame = () => {
         dispatch(setResetScore())
         dispatch(removeSummery())
         dispatch(setGameStatusNone())
     }
 
+    //This function will generate a random ID for the children of the game-summery div. 
     const uniqueId = () => {
         const id = uuid();
         return id;

@@ -32,7 +32,9 @@ const MathTester = () => {
   //sum state
   const [sum, setSum] = useState({});
 
-  //function for creating sum
+  //function for creating add math problem 
+  //Parameter numer1 gives the first random number between 10, 100 or 1000. parameter 2 also inserts 10, 100 or 1000 into the function. 
+  //The function should return an object with 2 random numbers and the answer. 
   const createSum = (number1 = 10, number2 = 10) => {
     const randomNumberOne = Math.floor(Math.random() * number1);
     const randomNumberTwo = Math.floor(Math.random() * number2);
@@ -46,6 +48,8 @@ const MathTester = () => {
     setSum(sumObject);
   }
 
+  //Function for creating a multiplication math problem 
+  //The function should return an object with 1 random number, a set multiplier and the answer. 
   const createMultiplySum = (multiply = 1) => {
     const randomNumber = Math.floor(Math.random() * 10);
     const answer = randomNumber * multiply;
@@ -58,6 +62,8 @@ const MathTester = () => {
     setSum(sumMultiplyObject);
   }
 
+  //Function for creating a mixed multiplication math problem 
+  //The function should return and object with 2 random numbers and the answer. 
   const createMultiplyMixSum = () => {
     const randomNumberOne = Math.floor(Math.random() * 11);
     const randomNumberTwo = Math.floor(Math.random() * 11);
@@ -71,7 +77,10 @@ const MathTester = () => {
     setSum(sumMultiplyMixObject);
   }
 
-  //Handle user submit 
+  //Handle user submit function 
+  /*The function checks the answer and either increases the score by 1 if the answer was right or decreases the score by 1 if the 
+  answer was wrong. If no answer was given an alert will be activated. The function will also dispatch the sum (wrong or right) to the
+  summery Redux slice*/
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -96,7 +105,7 @@ const MathTester = () => {
       return
     }
   }
-
+  //Lifecyle - when the score changes, the sum will also change depending on the gamemode. 
   useEffect(() => {
     switch (gameMode) {
       case 'ten': createSum(10, 10)
@@ -127,6 +136,7 @@ const MathTester = () => {
     }
   }, [gameMode, score])
 
+  //Lifecycle - The score will be added to Firebase depending on the type of sum. 
   useEffect(() => {
     if (gameLength === "done") {
       switch (gameMode) {

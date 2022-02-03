@@ -1,7 +1,5 @@
 import React from 'react';
 import "./navbar.css";
-//Components
-import Statspage from '../statsPage/Statspage';
 
 //React Icons
 import { FiLogOut } from "react-icons/fi";
@@ -12,21 +10,16 @@ import { BsFilePerson } from "react-icons/bs";
 //Router
 import { Link } from 'react-router-dom';
 
-//test profile image
-import testProfilePicture from "../../images/profile.jpg";
-
 //logo
 import mathMateLogo from "../../images/MathMateLogo.png";
 
 //Redux
 import { useSelector } from "react-redux";
-import { selectUserEmail, selectUserName, selectUserImage } from "../../reducers/userSlice";
+import { selectUserName, selectUserImage } from "../../reducers/userSlice";
 
 const Navbar = ({ handleSignOut }) => {
     const userName = useSelector(selectUserName);
-    const userEmail = useSelector(selectUserEmail);
     const userImage = useSelector(selectUserImage);
-
 
     return (
         <div className="nav-bar-container">

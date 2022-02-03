@@ -9,6 +9,7 @@ import StatsContainer from "./StatsContainer/StatsContainer";
 import { getAllScores } from '../../firebaseFunctions/addScore';
 
 const Statspage = () => {
+    //Local state 
     const [userDataTen, setUserDataTen] = useState();
     const [userDataHundred, setUserDataHundred] = useState();
     const [userDataThousand, setUserDataThousand] = useState();
@@ -22,9 +23,10 @@ const Statspage = () => {
     const [userDataMultiplyNine, setDataMultiplyNine] = useState();
     const [userDataMultiplyMix, setDataMultiplyMix] = useState();
 
+    //Get all the data from the Firebase Firestore 
     useEffect(() => {
+        let controller = new AbortController();
         const getUsers = async () => {
-            let controller = new AbortController();
             //Get scores from sumTen
             const dataTen = await getAllScores("sumTen");
             const dataTenObjects = dataTen.docs.map(doc => ({ ...doc.data(), id: doc.id }));
