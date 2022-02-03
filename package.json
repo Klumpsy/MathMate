@@ -1,7 +1,7 @@
 {
   "name": "mathpractise",
   "version": "0.1.0",
-  "homepage": "https://Klumpsy.github.io/MathMate",
+  "homepage": "https://Klumpsy.github.io/MathMate/",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
