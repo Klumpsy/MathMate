@@ -24,12 +24,12 @@ const Navbar = ({ handleSignOut }) => {
     return (
         <div className="nav-bar-container">
             <div>
-                <Link to="/">
+                <Link to="/MathMate">
                     <img className="nav-bar-logo" src={mathMateLogo} />
                 </Link>
             </div>
             <div className="nav-bar-links">
-                <Link to="/">
+                <Link to="/MathMate">
                     <CgGames className="nav-bar-controller" size={35} />
                 </Link>
                 <Link to="/stats">

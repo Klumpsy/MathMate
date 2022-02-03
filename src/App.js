@@ -30,7 +30,6 @@ import "./app.css"
 function App() {
   const dispatch = useDispatch(); 
   const userName = useSelector(selectUserName); 
-  const userEmail = useSelector(selectUserEmail); 
 
   const location = useLocation(); 
 
@@ -51,7 +50,7 @@ function App() {
   }
 
   useEffect(() => {
-    if(location.pathname != "/") { 
+    if(location.pathname != "/MathMate") { 
       dispatch(setGameStatusNone()); 
       dispatch(setStop()); 
     }
@@ -62,7 +61,7 @@ function App() {
         {userName && <Navbar handleSignOut = {handleSignOut}/>}
         {userName ? 
         <Routes>
-          <Route path="/" element = { <MathTester/>}/>
+          <Route path="/MathMate" element = { <MathTester/>}/>
           <Route path="/stats" element ={<Statspage/>}/>
           <Route path = "/personalStats" element = {<PersonalDashboard/>}/>
         </Routes>
