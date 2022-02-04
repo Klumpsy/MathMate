@@ -52,7 +52,9 @@ function App() {
   useEffect(() => {
     if(location.pathname != "/MathMate") { 
       dispatch(setGameStatusNone()); 
-      dispatch(setStop()); 
+      dispatch(setStop())
+      dispatch(setResetScore())
+      dispatch(removeSummery())
     }
   }, [location])
   
