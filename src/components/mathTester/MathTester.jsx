@@ -18,6 +18,9 @@ import { addToSummery } from '../../reducers/gameSummerySlice';
 //Firebase Functions
 import { addScore } from '../../firebaseFunctions/addScore';
 
+//Score table
+import { gameModeTable } from '../../gameModeTable/gameModeTable';
+
 const MathTester = () => {
 
   //Redux functions
@@ -151,48 +154,9 @@ const MathTester = () => {
   //Lifecycle - The score will be added to Firebase depending on the type of sum. 
   useEffect(() => {
     if (gameLength === "done") {
-      switch (gameMode) {
-        case "ten":
-          addScore(userName, "sumTen", score)
-          break
-        case "hundred":
-          addScore(userName, "sumHundred", score)
-          break
-        case "thousand":
-          addScore(userName, "sumThousand", score)
-          break
-        case "multiplyTwo":
-          addScore(userName, "multiplyTwo", score)
-          break
-        case "multiplyThree":
-          addScore(userName, "multiplyThree", score)
-          break
-        case "multiplyFour":
-          addScore(userName, "multiplyFour", score)
-          break
-        case "multiplyFive":
-          addScore(userName, "multiplyFive", score)
-          break
-        case "multiplySix":
-          addScore(userName, "multiplySix", score)
-          break
-        case "multiplySeven":
-          addScore(userName, "multiplySeven", score)
-          break
-        case "multiplyEight":
-          addScore(userName, "multiplyEight", score)
-          break
-        case "multiplyNine":
-          addScore(userName, "multiplyNine", score)
-          break
-        case "mix":
-          addScore(userName, "mix", score)
-          break
-        default: return
-      }
+      addScore(userName, gameModeTable[gameMode], score)
     }
   }, [gameLength])
-
 
   return (
     <>
