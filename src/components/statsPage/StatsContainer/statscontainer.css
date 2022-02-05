@@ -1,13 +1,18 @@
 .high-score-container {
   height: 400px;
   width: 300px;
-  overflow-x: auto;
   margin: 20px;
   padding: 10px;
   border-radius: 18px;
 }
 
-.high-score-container .high-score-item {
+.high-score-container .high-score-data {
+  overflow-x: auto;
+  height: 312px;
+  width: 100%;
+}
+
+.high-score-container .high-score-data .high-score-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,6 +22,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 5px;
   border-bottom: 1px solid black;
 }
 

@@ -1,8 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
 .math-tester-games-button {
-  position: absolute;
-  left: 10px;
-  top: 10px;
   width: 80px;
   height: 80px;
   border-radius: 40px;

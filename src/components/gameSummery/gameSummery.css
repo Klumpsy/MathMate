@@ -14,14 +14,14 @@
   height: 100%;
   font-size: 18px;
   padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .game-summery-container .game-summery {
   padding: 10px;
   border-radius: 10px;
   width: 400px;
-  max-height: 1000px;
-  overflow-x: auto;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -68,5 +68,24 @@
 .game-summery-container .back-to-game-button:hover {
   background-color: #77dfd1;
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #424744;
+  /* color of the tracking area */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #44444b;
+  /* color of the scroll thumb */
+  border-radius: 20px;
+  /* roundness of the scroll thumb */
+  border: 3px solid #121312;
+  /* creates padding around scroll thumb */
 }
 /*# sourceMappingURL=gameSummery.css.map */

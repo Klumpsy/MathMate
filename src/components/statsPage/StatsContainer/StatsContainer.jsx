@@ -20,15 +20,17 @@ function StatsContainer({ title, styleClass, mapData }) {
     return (
         <div className={`high-score-container ${styleClass}`}>
             <h2>{title}</h2>
-            {
-                mapData?.map((user, index) => (
-                    <div key={user.id + index} className="high-score-item">
-                        {priceChecker(index)}
-                        <h3>{user.name}</h3>
-                        <p>{user.score}</p>
-                    </div>
-                ))
-            }
+            <div className="high-score-data">
+                {
+                    mapData?.map((user, index) => (
+                        <div key={user.id + index} className="high-score-item">
+                            {priceChecker(index)}
+                            <h3>{user.name}</h3>
+                            <p>{user.score}</p>
+                        </div>
+                    ))
+                }
+            </div>
         </div >
     )
 }

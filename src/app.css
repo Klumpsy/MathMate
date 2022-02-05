@@ -6,7 +6,6 @@
 
 .application-container { 
     min-height: 100vh; 
-    height: 100%;
     padding-top: 100px; 
     background: rgb(174,238,236);
     background: radial-gradient(circle, rgba(174,238,236,1) 0%, rgba(56,89,77,1) 100%);  

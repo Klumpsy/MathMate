@@ -14,8 +14,10 @@ import {auth, provider} from "./firebase";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveUser, setLogoutUser, selectUserEmail, selectUserName } from "./reducers/userSlice"; 
+import { setActiveUser, setLogoutUser, selectUserName } from "./reducers/userSlice"; 
 import { setGameStatusNone, setStop } from "./reducers/timerSlice";
+import { setResetScore } from "./reducers/sumCheckerSlice";
+import { removeSummery } from "./reducers/gameSummerySlice";
 
 //components 
 import MathTester from "./components/mathTester/MathTester";
@@ -52,7 +54,9 @@ function App() {
   useEffect(() => {
     if(location.pathname != "/MathMate") { 
       dispatch(setGameStatusNone()); 
-      dispatch(setStop()); 
+      dispatch(setStop());
+      dispatch(setResetScore())
+      dispatch(removeSummery()) 
     }
   }, [location])
   

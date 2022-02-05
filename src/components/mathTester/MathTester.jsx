@@ -51,7 +51,7 @@ const MathTester = () => {
   //Function for creating a multiplication math problem 
   //The function should return an object with 1 random number, a set multiplier and the answer. 
   const createMultiplySum = (multiply = 1) => {
-    const randomNumber = Math.floor(Math.random() * 10);
+    const randomNumber = Math.floor(Math.random() * 11);
     const answer = randomNumber * multiply;
 
     const sumMultiplyObject = {
@@ -85,7 +85,7 @@ const MathTester = () => {
     event.preventDefault();
 
     if (event.target[0].value === "") {
-      alert("You forgot to give an answer!")
+      return
     }
     else if (event.target[0].value == sum.answer) {
       dispatch(setRightAnswer())
@@ -177,32 +177,38 @@ const MathTester = () => {
           <GameSummery />
           :
           <div className="math-tester-container">
-            {
-              !timer && <GameModes />
-            }
-            <div className="current-game-mode">
-              <h2>Current GameMode: {gameMode}</h2>
-            </div>
-            <div className="current-game-score">
-              <h1>Score: {score}</h1>
-            </div>
-            <div className="timer">
-              <Timer />
-            </div>
-            {gameLength === "playing" &&
-              <div className="current-game-sum">
+            <div className="math-tester-info-container">
+              <div className="game-mode-container">
                 {
-                  gameType === "plus" && <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+                  !timer && <GameModes />
                 }
-                {
-                  gameType === "multiply" && <span className="math-tester-sum">{`${sum.number1} x ${sum.number2}`}</span>
-                }
-                <form onSubmit={handleSubmit} className="form">
-                  <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
-                  <button type="submit" className="submit-button">submit</button>
-                </form>
+                <div className="current-game-mode">
+                  <h2>Current GameMode: {gameMode}</h2>
+                </div>
               </div>
-            }
+              <div className="current-game-score">
+                <h1>Score: {score}</h1>
+              </div>
+            </div>
+            <div className="current-game-sum-container">
+              <div className="timer">
+                <Timer />
+              </div>
+              {gameLength === "playing" &&
+                <div className="current-game-sum">
+                  {
+                    gameType === "plus" && <span className="math-tester-sum">{`${sum.number1} + ${sum.number2}`}</span>
+                  }
+                  {
+                    gameType === "multiply" && <span className="math-tester-sum">{`${sum.number1} x ${sum.number2}`}</span>
+                  }
+                  <form onSubmit={handleSubmit} className="form">
+                    <input className="math-input-answer" disabled={gameLength === "none" || gameLength === "done"} placeholder="Answer" type="number" style={{ fontSize: "20px" }} />
+                    <button type="submit" className="submit-button">submit</button>
+                  </form>
+                </div>
+              }
+            </div>
           </div>
       }
     </>

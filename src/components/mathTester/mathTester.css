@@ -1,7 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap");
 .math-tester-container {
   font-family: 'DM Sans', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.math-tester-container .math-tester-info-container {
   position: relative;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.math-tester-container .math-tester-info-container .game-mode-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.math-tester-container .math-tester-info-container .game-mode-container .current-game-mode {
+  position: absolute;
+  top: 45px;
+  left: 110px;
+}
+
+.math-tester-container .math-tester-info-container .current-game-score {
+  margin-right: 70px;
+  margin-top: 45px;
+  width: 200px;
+}
+
+.math-tester-container .current-game-sum-container {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -16,20 +66,14 @@
           align-items: center;
 }
 
-.math-tester-container .current-game-mode {
-  position: absolute;
-  left: 100px;
-  top: 30px;
-}
-
-.math-tester-container .timer {
+.math-tester-container .current-game-sum-container .timer {
   margin: 2rem;
   margin-top: 4rem;
 }
 
-.math-tester-container .current-game-sum {
-  margin-top: 5rem;
-  height: 200px;
+.math-tester-container .current-game-sum-container .current-game-sum {
+  margin-top: 3rem;
+  height: 100%;
   width: 650px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,23 +82,21 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 20px;
 }
 
-.math-tester-container .current-game-sum .math-tester-sum {
+.math-tester-container .current-game-sum-container .current-game-sum .math-tester-sum {
   font-size: 7rem;
 }
 
-.math-tester-container .current-game-sum .math-input-answer {
+.math-tester-container .current-game-sum-container .current-game-sum .math-input-answer {
   padding: 15px;
 }
 
-.math-tester-container .current-game-sum .form {
+.math-tester-container .current-game-sum-container .current-game-sum .form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -62,9 +104,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  height: 100%;
 }
 
-.math-tester-container .current-game-sum .form .submit-button {
+.math-tester-container .current-game-sum-container .current-game-sum .form .submit-button {
   padding: 10px;
   margin-top: 3px;
   background-color: #a9eea9;
@@ -73,14 +116,8 @@
   color: #243524;
 }
 
-.math-tester-container .current-game-sum .form .submit-button:hover {
+.math-tester-container .current-game-sum-container .current-game-sum .form .submit-button:hover {
   background-color: #73b373;
   cursor: pointer;
-}
-
-.math-tester-container .current-game-score {
-  position: absolute;
-  right: 50px;
-  top: 30px;
 }
 /*# sourceMappingURL=mathTester.css.map */
