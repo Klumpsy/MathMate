@@ -108,29 +108,41 @@ const MathTester = () => {
   //Lifecyle - when the score changes, the sum will also change depending on the gamemode. 
   useEffect(() => {
     switch (gameMode) {
-      case 'ten': createSum(10, 10)
+      case 'ten':
+        createSum(10, 10)
         break
-      case 'hundred': createSum(100, 100)
+      case 'hundred':
+        createSum(100, 100)
         break
-      case 'thousand': createSum(1000, 1000)
+      case 'thousand':
+        createSum(1000, 1000)
         break
-      case 'multiplyTwo': createMultiplySum(2)
+      case 'multiplyTwo':
+        createMultiplySum(2)
         break
-      case 'multiplyThree': createMultiplySum(3)
+      case 'multiplyThree':
+        createMultiplySum(3)
         break
-      case 'multiplyFour': createMultiplySum(4)
+      case 'multiplyFour':
+        createMultiplySum(4)
         break
-      case 'multiplyFive': createMultiplySum(5)
+      case 'multiplyFive':
+        createMultiplySum(5)
         break
-      case 'multiplySix': createMultiplySum(6)
+      case 'multiplySix':
+        createMultiplySum(6)
         break
-      case 'multiplySeven': createMultiplySum(7)
+      case 'multiplySeven':
+        createMultiplySum(7)
         break
-      case 'multiplyEight': createMultiplySum(8)
+      case 'multiplyEight':
+        createMultiplySum(8)
         break
-      case 'multiplyNine': createMultiplySum(9)
+      case 'multiplyNine':
+        createMultiplySum(9)
         break
-      case 'mix': createMultiplyMixSum()
+      case 'mix':
+        createMultiplyMixSum()
         break
       default: createSum(10, 10)
     }
@@ -140,29 +152,41 @@ const MathTester = () => {
   useEffect(() => {
     if (gameLength === "done") {
       switch (gameMode) {
-        case "ten": addScore(userName, "sumTen", score)
+        case "ten":
+          addScore(userName, "sumTen", score)
           break
-        case "hundred": addScore(userName, "sumHundred", score)
+        case "hundred":
+          addScore(userName, "sumHundred", score)
           break
-        case "thousand": addScore(userName, "sumThousand", score)
+        case "thousand":
+          addScore(userName, "sumThousand", score)
           break
-        case "multiplyTwo": addScore(userName, "multiplyTwo", score)
+        case "multiplyTwo":
+          addScore(userName, "multiplyTwo", score)
           break
-        case "multiplyThree": addScore(userName, "multiplyThree", score)
+        case "multiplyThree":
+          addScore(userName, "multiplyThree", score)
           break
-        case "multiplyFour": addScore(userName, "multiplyFour", score)
+        case "multiplyFour":
+          addScore(userName, "multiplyFour", score)
           break
-        case "multiplyFive": addScore(userName, "multiplyFive", score)
+        case "multiplyFive":
+          addScore(userName, "multiplyFive", score)
           break
-        case "multiplySix": addScore(userName, "multiplySix", score)
+        case "multiplySix":
+          addScore(userName, "multiplySix", score)
           break
-        case "multiplySeven": addScore(userName, "multiplySeven", score)
+        case "multiplySeven":
+          addScore(userName, "multiplySeven", score)
           break
-        case "multiplyEight": addScore(userName, "multiplyEight", score)
+        case "multiplyEight":
+          addScore(userName, "multiplyEight", score)
           break
-        case "multiplyNine": addScore(userName, "multiplyNine", score)
+        case "multiplyNine":
+          addScore(userName, "multiplyNine", score)
           break
-        case "mix": addScore(userName, "mix", score)
+        case "mix":
+          addScore(userName, "mix", score)
           break
         default: return
       }
