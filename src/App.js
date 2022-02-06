@@ -48,6 +48,10 @@ function App() {
   const handleSignOut = () => { 
       auth.signOut().then(() => { 
         dispatch(setLogoutUser())
+        dispatch(setGameStatusNone()); 
+        dispatch(setStop());
+        dispatch(setResetScore())
+        dispatch(removeSummery()) 
       }).catch(err => alert(err.message))
   }
 

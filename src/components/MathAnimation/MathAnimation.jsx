@@ -5,9 +5,7 @@ import "./mathAnimation.css"
 //Framer Motion
 import { motion } from "framer-motion";
 
-//Images
-import multiplyIcon from "../../images/multiplyIcon.png";
-import plusIcon from "../../images/plusIcon.png";
+//Icons
 import { ImPlus, ImCross } from "react-icons/im"
 
 //Redux
