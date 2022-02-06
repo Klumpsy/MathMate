@@ -26,7 +26,7 @@ const iconMotion = {
         ease: "easeOut",
         repeat: Infinity,
         repeatType: "reverse",
-        repeatDelay: 0.9
+        repeatDelay: 3.6
     }
 }
 
