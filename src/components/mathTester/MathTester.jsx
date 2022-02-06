@@ -6,6 +6,7 @@ import "./mathTester.css";
 import Timer from "../timer/Timer"
 import GameSummery from '../gameSummery/GameSummery';
 import GameModes from '../gameModes/GameModes';
+import MathAnimation from '../MathAnimation/MathAnimation';
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -172,6 +173,9 @@ const MathTester = () => {
                 }
                 <div className="current-game-mode">
                   <h2>Current GameMode: {gameMode}</h2>
+                  {
+                    gameLength === "playing" && <MathAnimation />
+                  }
                 </div>
               </div>
               <div className="current-game-score">
