@@ -3,5 +3,6 @@ Tool to practise basic math (random sum between 10 - 10, random sum between 100 
 
 Stack used:
 - React 
+- Redux toolkit 
 - Scss
 - Firebase 
