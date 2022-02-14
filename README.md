@@ -6,3 +6,7 @@ Stack used:
 - Redux toolkit 
 - Scss
 - Firebase 
+
+NOT MOBILE FRIENDLY YET! 
+
+*Use on Google Chrome for optimal result, still working on other browsers* 
