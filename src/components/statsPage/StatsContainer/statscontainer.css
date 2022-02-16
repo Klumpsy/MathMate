@@ -97,4 +97,10 @@
   background: linear-gradient(356deg, #f3b849 0%, #718778 100%);
   border: 2px solid #38594d;
 }
+
+.high-score-multiply-mix-hard {
+  background: #91bcc2;
+  background: linear-gradient(356deg, #428075 0%, #94afe0 100%);
+  border: 2px solid #38594d;
+}
 /*# sourceMappingURL=statscontainer.css.map */

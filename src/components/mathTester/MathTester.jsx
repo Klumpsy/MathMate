@@ -68,9 +68,9 @@ const MathTester = () => {
 
   //Function for creating a mixed multiplication math problem 
   //The function should return and object with 2 random numbers and the answer. 
-  const createMultiplyMixSum = () => {
-    const randomNumberOne = Math.floor(Math.random() * 11);
-    const randomNumberTwo = Math.floor(Math.random() * 11);
+  const createMultiplyMixSum = (number) => {
+    const randomNumberOne = Math.floor(Math.random() * number);
+    const randomNumberTwo = Math.floor(Math.random() * number);
     const answer = randomNumberOne * randomNumberTwo;
 
     const sumMultiplyMixObject = {
@@ -146,7 +146,10 @@ const MathTester = () => {
         createMultiplySum(9)
         break
       case 'mix':
-        createMultiplyMixSum()
+        createMultiplyMixSum(11)
+        break
+      case 'mix Hard':
+        createMultiplyMixSum(15)
         break
       default: createSum(10, 10)
     }

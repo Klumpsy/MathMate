@@ -45,7 +45,7 @@ const Timer = () => {
             setTime(60)
         } else if (gameMode === "thousand") {
             setTime(120)
-        } else if (gameMode === "mix") {
+        } else if (gameMode === "mix" || gameMode === "mix Hard") {
             setTime(90)
         } else {
             setTime(45)

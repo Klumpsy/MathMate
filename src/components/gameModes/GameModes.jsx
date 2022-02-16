@@ -36,6 +36,8 @@ const GameModes = () => {
                 break
             case "mix": dispatch(setGameMode({ gameMode: "mix", gameType: "multiply" }))
                 break
+            case "mix Hard": dispatch(setGameMode({ gameMode: "mix Hard", gameType: "multiply" }))
+                break
             default: dispatch(setGameStatusNone())
         }
     }
@@ -56,6 +58,7 @@ const GameModes = () => {
                 <button onClick={setGame} >x 8</button>
                 <button onClick={setGame} >x 9</button>
                 <button onClick={setGame} >mix</button>
+                <button onClick={setGame} >mix Hard</button>
             </div>
         </div>
     )

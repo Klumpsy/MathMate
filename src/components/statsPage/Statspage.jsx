@@ -22,7 +22,7 @@ const Statspage = () => {
     const [userDataMultiplyEight, setDataMultiplyEight] = useState();
     const [userDataMultiplyNine, setDataMultiplyNine] = useState();
     const [userDataMultiplyMix, setDataMultiplyMix] = useState();
-
+    const [userDataMultiplyMixHard, setDataMultiplyMixHard] = useState();
     //Get all the data from the Firebase Firestore 
     useEffect(() => {
         let controller = new AbortController();
@@ -75,6 +75,10 @@ const Statspage = () => {
             const dataMultiplyMix = await getAllScores("mix");
             const dataMultiplyMixObjects = dataMultiplyMix.docs.map(doc => ({ ...doc.data(), id: doc.id }));
             setDataMultiplyMix((dataMultiplyMixObjects.sort((a, b) => b.score - a.score)));
+            //Get scores from multiply Mix hard
+            const dataMultiplyMixHard = await getAllScores("mix Hard");
+            const dataMultiplyMixHardObjects = dataMultiplyMixHard.docs.map(doc => ({ ...doc.data(), id: doc.id }));
+            setDataMultiplyMixHard((dataMultiplyMixHardObjects.sort((a, b) => b.score - a.score)));
             return () => controller?.abort();
         }
         getUsers()
@@ -94,6 +98,7 @@ const Statspage = () => {
             <StatsContainer title="Multiply 8" styleClass="high-score-multiply-eight" mapData={userDataMultiplyEight} />
             <StatsContainer title="Multiply 9" styleClass="high-score-multiply-nine" mapData={userDataMultiplyNine} />
             <StatsContainer title="Multiply Mix" styleClass="high-score-multiply-mix" mapData={userDataMultiplyMix} />
+            <StatsContainer title="Multiply Mix Hard" styleClass="high-score-multiply-mix-hard" mapData={userDataMultiplyMixHard} />
         </div>
     )
 }

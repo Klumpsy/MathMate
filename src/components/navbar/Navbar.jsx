@@ -14,12 +14,16 @@ import { Link } from 'react-router-dom';
 import mathMateLogo from "../../images/MathMateLogo.png";
 
 //Redux
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectUserName, selectUserImage } from "../../reducers/userSlice";
+import { setGameStatusNone, setGameStatusDone, setStop } from "../../reducers/timerSlice";
+import { setResetScore } from "../../reducers/sumCheckerSlice";
+import { removeSummery } from "../../reducers/gameSummerySlice";
 
 const Navbar = ({ handleSignOut }) => {
     const userName = useSelector(selectUserName);
     const userImage = useSelector(selectUserImage);
+    const dispatch = useDispatch();
 
     return (
         <div className="nav-bar-container">

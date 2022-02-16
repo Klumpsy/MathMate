@@ -10,5 +10,6 @@ export const gameModeTable = {
     "multiplySeven": "multiplySeven",
     "multiplyEight": "multiplyEight",
     "multiplyNine": "multiplyNine",
-    "mix": "mix"
+    "mix": "mix",
+    "mix Hard": "mix Hard"
   }

@@ -25,6 +25,7 @@ const PersonalDashboard = () => {
     const [multiplyEight, setMultiplyEight] = useState(null);
     const [multiplyNine, setMultiplyNine] = useState(null);
     const [multiplyMix, setMultiplyMix] = useState(null);
+    const [multiplyMixHard, setMultiplyMixHard] = useState(null);
 
     //Lifecyle - should return the scores for the logged user
     useEffect(() => {
@@ -54,13 +55,15 @@ const PersonalDashboard = () => {
             setMultiplyNine(dataMultiplyNine);
             const dataMultiplyMix = await getPersonalScore("mix", userName)
             setMultiplyMix(dataMultiplyMix);
+            const dataMultiplyMixHard = await getPersonalScore("mix Hard", userName)
+            setMultiplyMixHard(dataMultiplyMixHard);
             return () => controller?.abort();
         }
         getScores()
     }, [])
 
     return (
-        <div className="personal-dashboard-container">
+        <div className="personal-dashboard-container" data-testid="personal-dashboard">
             <div className="personal-dashboard">
                 <h2>Your personal Stats</h2>
                 <ul className="personal-score">
@@ -75,7 +78,8 @@ const PersonalDashboard = () => {
                     <li>Best x 7 sum score: <p>{multiplySeven}</p></li>
                     <li>Best x 8 sum score: <p>{multiplyEight}</p></li>
                     <li>Best x 9 sum score: <p>{multiplyNine}</p></li>
-                    <li>Best Mix sum score: <p>{multiplyMix}</p></li>
+                    <li>Best Mix score: <p>{multiplyMix}</p></li>
+                    <li>Best Mix Hard score: <p>{multiplyMixHard}</p></li>
                 </ul>
             </div>
         </div>
