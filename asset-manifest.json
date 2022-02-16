@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/MathMate/static/css/main.04e5f639.css",
-    "main.js": "/MathMate/static/js/main.2a9f96a7.js",
+    "main.css": "/MathMate/static/css/main.a32eff3c.css",
+    "main.js": "/MathMate/static/js/main.d497b6cc.js",
     "static/media/MathMateLogo.png": "/MathMate/static/media/MathMateLogo.340fa8b4491897161b33.png",
     "index.html": "/MathMate/index.html",
-    "main.04e5f639.css.map": "/MathMate/static/css/main.04e5f639.css.map",
-    "main.2a9f96a7.js.map": "/MathMate/static/js/main.2a9f96a7.js.map"
+    "main.a32eff3c.css.map": "/MathMate/static/css/main.a32eff3c.css.map",
+    "main.d497b6cc.js.map": "/MathMate/static/js/main.d497b6cc.js.map"
   },
   "entrypoints": [
-    "static/css/main.04e5f639.css",
-    "static/js/main.2a9f96a7.js"
+    "static/css/main.a32eff3c.css",
+    "static/js/main.d497b6cc.js"
   ]
 }
